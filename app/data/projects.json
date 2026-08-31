@@ -1,0 +1,48 @@
+[
+  {
+    "id": "ecomart",
+    "title": "EcoMart",
+    "description": "Sustainable Shopping Experience",
+    "category": "React/Next.js",
+    "thumbnail": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
+    "techStack": ["Next.js", "Tailwind CSS", "Stripe"],
+    "details": {
+      "role": "Lead Frontend Developer",
+      "client": "EcoMart Global Inc.",
+      "timeline": "4 Months (2023)",
+      "challenge": "The client needed a platform that could handle high traffic while maintaining a buttery-smooth 60fps interaction experience.",
+      "solution": "We implemented an advanced asset-loading strategy using Next.js 13 streaming and Suspense.",
+      "features": ["Dynamic Filtering", "One-Click Checkout", "Adaptive Layout"],
+      "outcomes": [
+        { "label": "LIGHTHOUSE SCORE", "value": "98/100" },
+        { "label": "CONVERSION RATE", "value": "+40%" },
+        { "label": "TIME TO INTERACTIVE", "value": "2.1s" }
+      ],
+      "screenshots": [
+        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+      ]
+    }
+  },
+  {
+    "id": "fintech-alpha",
+    "title": "FinTech Alpha",
+    "description": "Modern Banking Dashboard",
+    "category": "Full-Stack",
+    "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    "techStack": ["React", "Node.js", "MongoDB"],
+    "details": {
+      "role": "Full-Stack Developer",
+      "client": "Alpha Bank",
+      "timeline": "6 Months (2022)",
+      "challenge": "Needed a secure, real-time dashboard for high-net-worth clients.",
+      "solution": "Built a scalable microservices architecture.",
+      "features": ["Real-time Analytics", "Secure Authentication", "Custom Reporting"],
+      "outcomes": [
+        { "label": "USER ENGAGEMENT", "value": "+60%" },
+        { "label": "API RESPONSE", "value": "< 100ms" }
+      ],
+      "screenshots": []
+    }
+  }
+]

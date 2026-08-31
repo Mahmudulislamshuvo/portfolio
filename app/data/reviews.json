@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Alex Johnson",
+    "role": "CEO, TechVibe",
+    "avatar": "https://i.pravatar.cc/150?u=1",
+    "rating": 5,
+    "text": "An incredible developer who truly understands UI/UX. The attention to detail in the micro-interactions is world-class."
+  },
+  {
+    "id": 2,
+    "name": "Sarah Chen",
+    "role": "Founder, Bloom.ai",
+    "avatar": "https://i.pravatar.cc/150?u=2",
+    "rating": 5,
+    "text": "Delivered our Next.js migration flawlessly. Performance metrics improved significantly right after launch."
+  },
+  {
+    "id": 3,
+    "name": "David Smith",
+    "role": "Product Manager, Nexus",
+    "avatar": "https://i.pravatar.cc/150?u=3",
+    "rating": 4,
+    "text": "Clean code and professional communication. One of the best frontend specialists I have worked with."
+  }
+]

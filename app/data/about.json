@@ -1,0 +1,18 @@
+{
+  "name": "Mahmudul Islam",
+  "role": "Frontend Developer",
+  "bio": "I am a passionate Frontend Developer dedicated to building high-performance, accessible, and beautiful web applications. My journey in tech started with a curiosity for how things work on the internet, which evolved into a career focused on React and modern web ecosystems.",
+  "stats": [
+    { "label": "YEARS OF EXPERIENCE", "value": "5+" },
+    { "label": "COMPLETED PROJECTS", "value": "120+" },
+    { "label": "HAPPY CLIENTS", "value": "95+" },
+    { "label": "CODE COMMITS", "value": "12k+" }
+  ],
+  "socials": {
+    "github": "https://github.com",
+    "linkedin": "https://linkedin.com",
+    "twitter": "https://twitter.com",
+    "email": "hello@portfolio.dev"
+  },
+  "location": "San Francisco, CA"
+}
