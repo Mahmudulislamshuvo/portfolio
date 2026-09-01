@@ -3,7 +3,10 @@ import React, { useState } from 'react';
 import { ArrowLeft, User, Building2, FolderKanban, Star, MessageSquare, Send, Check } from 'lucide-react';
 import { AVATAR_OPTIONS } from '../data/portfolioData';
 
-export const ReviewFormView = ({ onBack, onSubmitReview }) => {
+import { useRouter } from "next/navigation";
+
+export const ReviewFormView = () => {
+  const router = useRouter();
   const [fullName, setFullName] = useState('');
   const [roleCompany, setRoleCompany] = useState('');
   const [category, setCategory] = useState('');
@@ -66,11 +69,11 @@ export const ReviewFormView = ({ onBack, onSubmitReview }) => {
       createdAt: new Date().toISOString().split('T')[0],
     };
 
-    onSubmitReview(newReview);
+    // onSubmitReview(newReview);
     setSubmitted(true);
 
     setTimeout(() => {
-      onBack();
+      router.push("/");
     }, 1800);
   };
 
@@ -83,7 +86,7 @@ export const ReviewFormView = ({ onBack, onSubmitReview }) => {
       <div className="w-full max-w-2xl relative z-10">
         {/* Back Link */}
         <button
-          onClick={onBack}
+          onClick={() => router.push("/")}
           className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-cyan-400 mb-8 transition-colors group cursor-pointer"
         >
           <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />

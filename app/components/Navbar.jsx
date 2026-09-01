@@ -1,53 +1,63 @@
 "use client";
-import React, { useState, useEffect } from 'react';
-import { Download, Menu, X, Star } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Download, Menu, X } from "lucide-react";
+import { ResumeModal } from "./ResumeModal";
 
-export const Navbar = ({ onOpenReview, onResumeClick }) => {
+export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('home');
+  const [activeSection, setActiveSection] = useState("home");
+  const [resumeModalOpen, setResumeModalOpen] = useState(false);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
-    { label: 'About', href: '#about' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Projects', href: '#projects' },
-    { label: 'Experience', href: '#experience' },
-    { label: 'Education', href: '#education' },
-    { label: 'Reviews', href: '#reviews' },
-    { label: 'Contact', href: '#contact' },
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Skills", href: "#skills" },
+    { label: "Projects", href: "#projects" },
+    { label: "Experience", href: "#experience" },
+    { label: "Education", href: "#education" },
+    { label: "Reviews", href: "#reviews" },
+    { label: "Contact", href: "#contact" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 40);
 
-      const sections = ['home', 'about', 'skills', 'projects', 'experience', 'education', 'reviews', 'contact'];
-      const scrollPosition = window.scrollY + 200;
+      const sections = [
+        "home",
+        "about",
+        "skills",
+        "projects",
+        "experience",
+        "education",
+        "reviews",
+        "contact",
+      ];
 
+      let current = "";
       for (const section of sections) {
         const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
-          }
+        if (el && window.scrollY >= el.offsetTop - 300) {
+          current = section;
         }
+      }
+
+      if (current) {
+        setActiveSection(current);
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-[#080B11]/85 backdrop-blur-md border-b border-slate-800/80 py-3.5 shadow-2xl shadow-black/50'
-          : 'bg-transparent py-5'
+          ? "bg-[#080B11]/85 backdrop-blur-md border-b border-slate-800/80 py-3.5 shadow-2xl shadow-black/50"
+          : "bg-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -56,7 +66,7 @@ export const Navbar = ({ onOpenReview, onResumeClick }) => {
           href="#home"
           className="flex items-center gap-2.5 text-white font-bold text-lg group"
         >
-          <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-cyan-500 to-indigo-600 flex items-center justify-center text-white text-sm font-black shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
+          <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-500 to-indigo-600 flex items-center justify-center text-white text-sm font-black shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
             ⚡
           </div>
           <span className="tracking-tight text-slate-100 font-semibold flex items-center gap-1.5">
@@ -72,8 +82,8 @@ export const Navbar = ({ onOpenReview, onResumeClick }) => {
               href={item.href}
               className={`transition-colors duration-200 hover:text-cyan-400 ${
                 activeSection === item.href.substring(1)
-                  ? 'text-cyan-400 font-semibold'
-                  : 'text-slate-400'
+                  ? "text-cyan-400 font-semibold"
+                  : "text-slate-400"
               }`}
             >
               {item.label}
@@ -84,15 +94,7 @@ export const Navbar = ({ onOpenReview, onResumeClick }) => {
         {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-3">
           <button
-            onClick={onOpenReview}
-            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-cyan-300 hover:text-cyan-200 bg-cyan-950/40 hover:bg-cyan-900/50 border border-cyan-800/60 rounded-full transition-all duration-200 shadow-sm hover:shadow-cyan-500/20 active:scale-95 cursor-pointer"
-          >
-            <Star className="w-3.5 h-3.5 text-cyan-400 fill-cyan-400/20" />
-            <span>Give Review</span>
-          </button>
-
-          <button
-            onClick={onResumeClick}
+            onClick={() => setResumeModalOpen(true)}
             className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-full shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 transition-all duration-200 active:scale-95 border border-indigo-400/30 cursor-pointer"
           >
             <span>Resume</span>
@@ -103,17 +105,15 @@ export const Navbar = ({ onOpenReview, onResumeClick }) => {
         {/* Mobile menu hamburger */}
         <div className="flex sm:hidden items-center gap-2">
           <button
-            onClick={onOpenReview}
-            className="px-2.5 py-1.5 text-xs font-medium text-cyan-300 bg-cyan-950/60 border border-cyan-800/60 rounded-full"
-          >
-            Review
-          </button>
-          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/60 transition-colors"
             aria-label="Toggle menu"
           >
-            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </div>
@@ -135,7 +135,7 @@ export const Navbar = ({ onOpenReview, onResumeClick }) => {
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onResumeClick();
+                setResumeModalOpen(true);
               }}
               className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-full"
             >
@@ -145,6 +145,11 @@ export const Navbar = ({ onOpenReview, onResumeClick }) => {
           </div>
         </div>
       )}
+
+      <ResumeModal
+        isOpen={resumeModalOpen}
+        onClose={() => setResumeModalOpen(false)}
+      />
     </header>
   );
 };
