@@ -1,5 +1,5 @@
 import { Code2, Layers, Terminal } from 'lucide-react';
-import { SKILL_CATEGORIES } from '../data/portfolioData';
+import skillsData from '../data/skills.json';
 
 export const Skills = () => {
   const getIcon = (iconName) => {
@@ -30,7 +30,7 @@ export const Skills = () => {
 
         {/* 3 Skill Category Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {SKILL_CATEGORIES.map((category) => (
+          {skillsData.categories.map((category) => (
             <div
               key={category.id}
               className="bg-[#111722] border border-slate-800/80 hover:border-slate-700 rounded-2xl p-6 transition-all duration-300 hover:shadow-md group flex flex-col justify-between"
@@ -46,7 +46,7 @@ export const Skills = () => {
                 </div>
 
                 <div className="flex flex-wrap gap-2 pt-1">
-                  {category.skills.map((skill, sIdx) => (
+                  {category.items.map((skill, sIdx) => (
                     <span
                       key={sIdx}
                       className="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-[#161D2B] border border-slate-800 hover:border-slate-600 hover:text-white transition-all duration-200 cursor-default"
@@ -59,7 +59,7 @@ export const Skills = () => {
 
               <div className="mt-6 pt-4 border-t border-slate-800/50 flex items-center justify-between text-[11px] font-mono text-slate-400">
                 <span>Proficiency: Senior</span>
-                <span className="text-cyan-400/80">{category.skills.length} Technologies</span>
+                <span className="text-cyan-400/80">{category.items.length} Technologies</span>
               </div>
             </div>
           ))}

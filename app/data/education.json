@@ -1,10 +1,30 @@
 [
   {
     "id": 1,
-    "degree": "Bachelor of Science in Computer Science",
-    "institution": "University of Technology",
-    "period": "2014 - 2018",
-    "description": "Graduated with Honors. Focused on web technologies, software engineering, and human-computer interaction.",
-    "highlights": ["GPA: 3.8/4.0", "President of the Web Development Club", "Published a paper on UX in e-commerce"]
+    "degree": "Degree (Bsc)",
+    "institution": "National University",
+    "period": "Final Year Running",
+    "description": "Group: Science",
+    "highlights": []
+  },
+  {
+    "id": 2,
+    "degree": "Highter Secondary School Certificate (HSC)",
+    "institution": "Gazipur City College",
+    "period": "2017-2018",
+    "description": "Group: Science",
+    "highlights": [
+      "Result: GPA 2.59 (Out of 5.00)"
+    ]
+  },
+  {
+    "id": 3,
+    "degree": "Secondary School Certificate (SSC)",
+    "institution": "Lighthouse Career College",
+    "period": "2015-2016",
+    "description": "Group: Science",
+    "highlights": [
+      "Result: GPA 4.56 (Out of 5.00)"
+    ]
   }
 ]

@@ -8,7 +8,7 @@ import { Education } from "./components/Education";
 import { Reviews } from "./components/Reviews";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
-import { INITIAL_REVIEWS } from "./data/portfolioData";
+import reviewsData from "./data/reviews.json";
 
 export default function Home() {
   return (
@@ -26,7 +26,7 @@ export default function Home() {
         <Projects />
         <Experience />
         <Education />
-        <Reviews reviews={INITIAL_REVIEWS} />
+        <Reviews reviews={reviewsData} />
         <Contact />
       </main>
 

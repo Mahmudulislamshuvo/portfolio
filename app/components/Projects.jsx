@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { ExternalLink } from 'lucide-react';
-import { FEATURED_PROJECTS } from '../data/portfolioData';
+import projectsData from '../data/projects.json';
 import { GithubIcon } from './SocialIcons';
 
 export const Projects = () => {
@@ -9,10 +9,9 @@ export const Projects = () => {
 
   const filters = ['All', 'React/Next.js', 'UI/UX', 'Full-Stack'];
 
-  const filteredProjects =
-    activeFilter === 'All'
-      ? FEATURED_PROJECTS
-      : FEATURED_PROJECTS.filter((p) => p.category === activeFilter);
+  const filteredProjects = activeFilter === 'All'
+    ? projectsData
+    : projectsData.filter(project => project.category === activeFilter);
 
   return (
     <section id="projects" className="py-20 relative">
@@ -59,7 +58,7 @@ export const Projects = () => {
               <div>
                 <div className="relative h-48 overflow-hidden bg-slate-950">
                   <img
-                    src={project.image}
+                    src={project.thumbnail}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
@@ -79,7 +78,7 @@ export const Projects = () => {
                   </p>
 
                   <div className="flex flex-wrap gap-1.5 mt-4">
-                    {project.tech.map((t, idx) => (
+                    {project.techStack?.map((t, idx) => (
                       <span
                         key={idx}
                         className="px-2.5 py-1 rounded-md text-[11px] font-mono text-slate-300 bg-[#161D2B] border border-slate-800"
@@ -92,24 +91,28 @@ export const Projects = () => {
               </div>
 
               <div className="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-800/60 mt-2">
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
-                >
-                  <span>Live Demo</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-                <a
-                  href={project.githubUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors"
-                >
-                  <GithubIcon className="w-3.5 h-3.5" />
-                  <span>Source</span>
-                </a>
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                  >
+                    <span>Live Demo</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                )}
+                {project.githubUrl && (
+                  <a
+                    href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors ml-auto"
+                  >
+                    <GithubIcon className="w-3.5 h-3.5" />
+                    <span>Source</span>
+                  </a>
+                )}
               </div>
             </div>
           ))}

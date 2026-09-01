@@ -1,26 +1,12 @@
 [
   {
     "id": 1,
-    "role": "Senior Frontend Engineer",
-    "company": "TechNova Solutions",
-    "period": "2022 - Present",
+    "role": "Junior Frontend Developer",
+    "company": "Team Dev Zero",
+    "period": "3 month",
     "description": "Leading the development of core UI components and design systems. Optimized dashboard rendering by 40% using Next.js 14 features.",
-    "highlights": ["Architected scalable component library", "Mentored 5+ junior developers"]
-  },
-  {
-    "id": 2,
-    "role": "Web Developer",
-    "company": "Digital Stream Co.",
-    "period": "2020 - 2022",
-    "description": "Developed and maintained client-facing e-commerce platforms. Implemented complex animations and micro-interactions.",
-    "highlights": ["Reduced bundle size by 30%", "Implemented automated CI/CD pipelines"]
-  },
-  {
-    "id": 3,
-    "role": "Junior Developer",
-    "company": "StartUp Hub",
-    "period": "2018 - 2020",
-    "description": "Contributed to building responsive landing pages and internal admin panels. Collaborated closely with UI/UX designers.",
-    "highlights": ["Won Employee of the Quarter", "Built 20+ custom React hooks"]
+    "highlights": [
+      "Architected scalable component library"
+    ]
   }
 ]

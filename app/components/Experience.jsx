@@ -1,5 +1,5 @@
 import { Calendar } from 'lucide-react';
-import { EXPERIENCES } from '../data/portfolioData';
+import experienceData from '../data/experience.json';
 
 export const Experience = () => {
   return (
@@ -17,7 +17,7 @@ export const Experience = () => {
 
         {/* Experience Cards Stack */}
         <div className="space-y-6">
-          {EXPERIENCES.map((exp) => (
+          {experienceData.map((exp) => (
             <div
               key={exp.id}
               className="bg-[#111722] border border-slate-800/80 hover:border-slate-700 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group"
@@ -41,9 +41,9 @@ export const Experience = () => {
                 {exp.description}
               </p>
 
-              {/* Achievement Badges */}
+              {/* Highlights */}
               <div className="flex flex-wrap gap-3">
-                {exp.achievements.map((ach, idx) => (
+                {exp.highlights?.map((ach, idx) => (
                   <div
                     key={idx}
                     className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#141A26] border border-slate-800/80 text-xs text-slate-300"

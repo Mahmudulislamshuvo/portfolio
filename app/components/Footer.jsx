@@ -1,14 +1,14 @@
-import React from 'react';
-import { ScrollToTopButton } from './ScrollToTopButton';
+import React from "react";
+import { ScrollToTopButton } from "./ScrollToTopButton";
 
 export const Footer = () => {
-
   return (
     <footer className="border-t border-slate-800/80 bg-[#06080E] py-8 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
         {/* Copyright */}
         <p className="text-xs text-slate-500 text-center sm:text-left">
-          © 2026 Frontend Developer Portfolio. All rights reserved.
+          © {new Date().getFullYear()} Mahmudul Islam's Portfolio. All rights
+          reserved.
         </p>
 
         {/* Legal Links & Scroll Top */}

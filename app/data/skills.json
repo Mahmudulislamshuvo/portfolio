@@ -1,19 +1,39 @@
 {
   "categories": [
     {
+      "id": 1,
       "title": "Frontend Core",
       "icon": "Code",
-      "items": ["JavaScript (ES6+)", "HTML5", "CSS3 / Modern CSS", "TypeScript"]
+      "items": [
+        "JavaScript (ES6+)",
+        "HTML5",
+        "CSS3 / Modern CSS",
+        "TypeScript"
+      ]
     },
     {
+      "id": 2,
       "title": "Frameworks & Libraries",
       "icon": "Layout",
-      "items": ["React.js", "Next.js", "Tailwind CSS", "Framer Motion", "Redux Toolkit"]
+      "items": [
+        "React.js",
+        "Next.js",
+        "Tailwind CSS",
+        "Framer Motion",
+        "Redux Toolkit"
+      ]
     },
     {
+      "id": 3,
       "title": "Tools & Platforms",
       "icon": "Terminal",
-      "items": ["Git & GitHub", "VS Code", "Figma", "Vercel", "REST APIs"]
+      "items": [
+        "Git & GitHub",
+        "VS Code",
+        "Figma",
+        "Vercel",
+        "REST APIs"
+      ]
     }
   ]
 }
