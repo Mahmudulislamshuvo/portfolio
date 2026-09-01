@@ -77,8 +77,8 @@ export const ReviewFormView = ({ onBack, onSubmitReview }) => {
   return (
     <div className="min-h-screen bg-[#080B11] text-slate-300 py-12 px-4 sm:px-6 flex flex-col justify-center items-center relative overflow-hidden">
       {/* Background glow backdrops */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-cyan-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-10 right-1/4 w-[400px] h-[400px] bg-cyan-900/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="w-full max-w-2xl relative z-10">
         {/* Back Link */}
@@ -91,12 +91,12 @@ export const ReviewFormView = ({ onBack, onSubmitReview }) => {
         </button>
 
         {/* Form Container Card */}
-        <div className="bg-[#0D121D]/95 border border-slate-800 rounded-2xl p-7 sm:p-10 shadow-2xl backdrop-blur-xl">
+        <div className="bg-[#141A26] border border-slate-800 rounded-2xl p-7 sm:p-10 shadow-lg">
           {/* Header */}
           <div className="text-center mb-8">
             <h1 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
               Share Your{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              <span className="text-cyan-400">
                 Experience
               </span>
             </h1>

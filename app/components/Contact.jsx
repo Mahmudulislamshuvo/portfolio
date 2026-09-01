@@ -41,7 +41,7 @@ export const Contact = () => {
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
                 Get In{' '}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+                <span className="text-cyan-400">
                   Touch
                 </span>
               </h2>
@@ -100,7 +100,7 @@ export const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={soc.label}
-                  className="w-10 h-10 rounded-xl bg-[#0F141E] border border-slate-800 hover:border-cyan-500/40 text-slate-400 hover:text-cyan-400 flex items-center justify-center transition-all duration-200 hover:shadow-lg hover:shadow-cyan-500/10 cursor-pointer"
+                  className="w-10 h-10 rounded-xl bg-[#111722] border border-slate-800 hover:border-slate-600 text-slate-400 hover:text-white flex items-center justify-center transition-all duration-200 hover:shadow-md cursor-pointer"
                 >
                   <soc.icon className="w-4 h-4" />
                 </a>
@@ -110,7 +110,7 @@ export const Contact = () => {
 
           {/* Right Column: Contact Form */}
           <div className="lg:col-span-7">
-            <div className="bg-[#0F141E]/95 border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-xl backdrop-blur-md">
+            <div className="bg-[#141A26] border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-lg">
               <form onSubmit={handleSubmit} className="space-y-4">
                 {statusMsg && (
                   <div

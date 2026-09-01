@@ -9,7 +9,7 @@ export const Reviews = ({ reviews, onWriteReview }) => {
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white inline-block">
             Client{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+            <span className="text-cyan-400">
               Reviews
             </span>
           </h2>
@@ -20,7 +20,7 @@ export const Reviews = ({ reviews, onWriteReview }) => {
           {reviews.map((rev) => (
             <div
               key={rev.id}
-              className="bg-[#0F141E]/95 border border-slate-800/90 hover:border-indigo-500/40 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-indigo-950/20 group flex flex-col justify-between"
+              className="bg-[#111722] border border-slate-800/80 hover:border-slate-700 rounded-2xl p-6 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group flex flex-col justify-between"
             >
               <div>
                 {/* Reviewer Header */}
@@ -75,8 +75,7 @@ export const Reviews = ({ reviews, onWriteReview }) => {
         </div>
 
         {/* CTA Banner: Worked with me on a project? */}
-        <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-gradient-to-b from-[#111726]/90 to-[#0A0D15]/90 p-8 sm:p-10 text-center shadow-2xl">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-600/10 via-indigo-600/10 to-cyan-500/10 opacity-50" />
+        <div className="relative rounded-2xl overflow-hidden border border-slate-800 bg-[#141A26] p-8 sm:p-10 text-center shadow-lg">
           <div className="relative z-10 max-w-xl mx-auto space-y-4">
             <h3 className="text-xl sm:text-2xl font-bold text-white tracking-tight">
               "Worked with me on a project? Share your experience!"
@@ -87,7 +86,7 @@ export const Reviews = ({ reviews, onWriteReview }) => {
             <div className="pt-2">
               <button
                 onClick={onWriteReview}
-                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-slate-900/90 hover:bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-all duration-200 shadow-lg hover:shadow-cyan-500/20 active:scale-95 cursor-pointer"
+                className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-semibold text-white bg-slate-900 border border-slate-700 hover:bg-slate-800 hover:border-slate-600 transition-all duration-200 shadow-md active:scale-95 cursor-pointer"
               >
                 <PlusCircle className="w-4 h-4 text-cyan-400" />
                 <span>Write a Review</span>

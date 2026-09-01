@@ -22,7 +22,7 @@ export const Projects = () => {
           <div>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
               Featured{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              <span className="text-cyan-400">
                 Projects
               </span>
             </h2>
@@ -54,7 +54,7 @@ export const Projects = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-[#0F141E]/90 border border-slate-800/90 hover:border-indigo-500/40 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-indigo-950/30 group flex flex-col justify-between"
+              className="bg-[#111722] border border-slate-800/80 hover:border-slate-700 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group flex flex-col justify-between"
             >
               <div>
                 <div className="relative h-48 overflow-hidden bg-slate-950">

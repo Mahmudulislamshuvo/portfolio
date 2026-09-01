@@ -21,9 +21,9 @@ export const Skills = () => {
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white inline-block">
             Tech Stack &{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 relative pb-1">
+            <span className="text-cyan-400 relative pb-1">
               Skills
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-cyan-500 rounded-full" />
             </span>
           </h2>
         </div>
@@ -33,11 +33,11 @@ export const Skills = () => {
           {SKILL_CATEGORIES.map((category) => (
             <div
               key={category.id}
-              className="bg-[#0F141E]/95 border border-slate-800/90 hover:border-slate-700/90 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-950/20 group flex flex-col justify-between"
+              className="bg-[#111722] border border-slate-800/80 hover:border-slate-700 rounded-2xl p-6 transition-all duration-300 hover:shadow-md group flex flex-col justify-between"
             >
               <div>
                 <div className="flex items-center gap-3 mb-5">
-                  <div className="w-10 h-10 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-center group-hover:border-cyan-500/30 transition-colors shadow-inner">
+                  <div className="w-10 h-10 rounded-xl bg-[#141A26] border border-slate-800 flex items-center justify-center group-hover:border-slate-600 transition-colors shadow-inner">
                     {getIcon(category.icon)}
                   </div>
                   <h3 className="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
@@ -49,7 +49,7 @@ export const Skills = () => {
                   {category.skills.map((skill, sIdx) => (
                     <span
                       key={sIdx}
-                      className="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-[#161D2B]/80 border border-slate-800/80 hover:border-cyan-500/40 hover:text-cyan-300 transition-all duration-200 cursor-default"
+                      className="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-[#161D2B] border border-slate-800 hover:border-slate-600 hover:text-white transition-all duration-200 cursor-default"
                     >
                       {skill}
                     </span>

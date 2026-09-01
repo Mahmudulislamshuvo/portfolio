@@ -9,8 +9,8 @@ export const Education = () => {
         <div className="text-center mb-14">
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white inline-block">
             Education{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
-              History
+            <span className="text-cyan-400">
+              Education
             </span>
           </h2>
         </div>
@@ -20,7 +20,7 @@ export const Education = () => {
           {educationData.map((edu) => (
             <div
               key={edu.id}
-              className="bg-[#0F141E]/95 border border-slate-800/90 hover:border-slate-700 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-950/10 group"
+              className="bg-[#111722] border border-slate-800/80 hover:border-slate-700 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group"
             >
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/60 pb-4 mb-4">
                 <div>
