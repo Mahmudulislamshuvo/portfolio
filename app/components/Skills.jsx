@@ -1,34 +1,70 @@
-import skillsData from "../data/skills.json";
-import { Code, Layout, Terminal } from "lucide-react";
+import { Code2, Layers, Terminal } from 'lucide-react';
+import { SKILL_CATEGORIES } from '../data/portfolioData';
 
-const icons = { Code, Layout, Terminal };
+export const Skills = () => {
+  const getIcon = (iconName) => {
+    switch (iconName) {
+      case 'Code2':
+        return <Code2 className="w-5 h-5 text-cyan-400" />;
+      case 'Layers':
+        return <Layers className="w-5 h-5 text-indigo-400" />;
+      case 'Wrench':
+      default:
+        return <Terminal className="w-5 h-5 text-blue-400" />;
+    }
+  };
 
-export function Skills() {
   return (
-    <section id="skills" className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-16">Tech Stack & <span className="text-blue-500">Skills</span></h2>
-        <div className="grid md:grid-cols-3 gap-8">
-          {skillsData.categories.map((cat, i) => {
-            const Icon = icons[cat.icon] || Code;
-            return (
-              <div key={i} className="p-8 rounded-2xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800">
-                <div className="w-12 h-12 bg-blue-500/10 text-blue-500 rounded-xl flex items-center justify-center mb-6">
-                  <Icon size={24} />
+    <section id="skills" className="py-20 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Section Heading */}
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white inline-block">
+            Tech Stack &{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400 relative pb-1">
+              Skills
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gradient-to-r from-blue-500 to-cyan-400 rounded-full" />
+            </span>
+          </h2>
+        </div>
+
+        {/* 3 Skill Category Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {SKILL_CATEGORIES.map((category) => (
+            <div
+              key={category.id}
+              className="bg-[#0F141E]/95 border border-slate-800/90 hover:border-slate-700/90 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-950/20 group flex flex-col justify-between"
+            >
+              <div>
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-10 h-10 rounded-xl bg-slate-900/90 border border-slate-800 flex items-center justify-center group-hover:border-cyan-500/30 transition-colors shadow-inner">
+                    {getIcon(category.icon)}
+                  </div>
+                  <h3 className="text-lg font-semibold text-white group-hover:text-cyan-300 transition-colors">
+                    {category.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-semibold mb-6">{cat.title}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {cat.items.map((item, j) => (
-                    <span key={j} className="px-3 py-1 text-sm bg-zinc-100 dark:bg-zinc-900 text-zinc-700 dark:text-zinc-300 rounded-full">
-                      {item}
+
+                <div className="flex flex-wrap gap-2 pt-1">
+                  {category.skills.map((skill, sIdx) => (
+                    <span
+                      key={sIdx}
+                      className="px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300 bg-[#161D2B]/80 border border-slate-800/80 hover:border-cyan-500/40 hover:text-cyan-300 transition-all duration-200 cursor-default"
+                    >
+                      {skill}
                     </span>
                   ))}
                 </div>
               </div>
-            );
-          })}
+
+              <div className="mt-6 pt-4 border-t border-slate-800/50 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <span>Proficiency: Senior</span>
+                <span className="text-cyan-400/80">{category.skills.length} Technologies</span>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
   );
-}
+};

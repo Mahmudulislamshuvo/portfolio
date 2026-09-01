@@ -1,0 +1,10 @@
+[
+  {
+    "id": 1,
+    "degree": "Bachelor of Science in Computer Science",
+    "institution": "University of Technology",
+    "period": "2014 - 2018",
+    "description": "Graduated with Honors. Focused on web technologies, software engineering, and human-computer interaction.",
+    "highlights": ["GPA: 3.8/4.0", "President of the Web Development Club", "Published a paper on UX in e-commerce"]
+  }
+]

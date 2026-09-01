@@ -1,28 +1,57 @@
-import expData from "../data/experience.json";
+import { Calendar } from 'lucide-react';
+import { EXPERIENCES } from '../data/portfolioData';
 
-export function Experience() {
+export const Experience = () => {
   return (
-    <section id="experience" className="py-24 bg-zinc-50 dark:bg-zinc-900/50">
-      <div className="max-w-4xl mx-auto px-6">
-        <h2 className="text-3xl font-bold text-center mb-16">Work <span className="text-blue-500">Experience</span></h2>
-        <div className="space-y-12">
-          {expData.map((job) => (
-            <div key={job.id} className="relative pl-8 md:pl-0">
-              <div className="md:grid md:grid-cols-4 md:gap-8 items-start">
-                <div className="mb-4 md:mb-0 md:text-right pt-1 text-sm font-medium text-zinc-500">
-                  {job.period}
+    <section id="experience" className="py-20 relative">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        {/* Heading */}
+        <div className="text-center mb-14">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white inline-block">
+            Work{' '}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">
+              Experience
+            </span>
+          </h2>
+        </div>
+
+        {/* Experience Cards Stack */}
+        <div className="space-y-6">
+          {EXPERIENCES.map((exp) => (
+            <div
+              key={exp.id}
+              className="bg-[#0F141E]/95 border border-slate-800/90 hover:border-slate-700 rounded-2xl p-6 sm:p-7 transition-all duration-300 hover:shadow-xl hover:shadow-cyan-950/10 group"
+            >
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800/60 pb-4 mb-4">
+                <div>
+                  <h3 className="text-lg sm:text-xl font-bold text-white group-hover:text-cyan-300 transition-colors">
+                    {exp.role}
+                  </h3>
+                  <p className="text-sm font-semibold text-cyan-400 mt-0.5">
+                    {exp.company}
+                  </p>
                 </div>
-                <div className="md:col-span-3 relative pb-12 border-l border-zinc-200 dark:border-zinc-800 md:pl-8 last:pb-0 last:border-0">
-                  <div className="absolute w-3 h-3 bg-blue-500 rounded-full -left-[6.5px] top-2" />
-                  <h3 className="text-xl font-bold">{job.role}</h3>
-                  <div className="text-blue-500 mb-4">{job.company}</div>
-                  <p className="text-zinc-600 dark:text-zinc-400 mb-4">{job.description}</p>
-                  <ul className="list-disc pl-5 space-y-2 text-zinc-600 dark:text-zinc-400">
-                    {job.highlights.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-mono font-medium text-slate-400 bg-slate-900 border border-slate-800 self-start sm:self-auto">
+                  <Calendar className="w-3 h-3 text-cyan-400" />
+                  <span>{exp.period}</span>
                 </div>
+              </div>
+
+              <p className="text-slate-400 text-sm leading-relaxed mb-5">
+                {exp.description}
+              </p>
+
+              {/* Achievement Badges */}
+              <div className="flex flex-wrap gap-3">
+                {exp.achievements.map((ach, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-[#141A26] border border-slate-800/80 text-xs text-slate-300"
+                  >
+                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+                    <span>{ach}</span>
+                  </div>
+                ))}
               </div>
             </div>
           ))}
@@ -30,4 +59,4 @@ export function Experience() {
       </div>
     </section>
   );
-}
+};

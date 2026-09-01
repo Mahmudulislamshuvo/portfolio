@@ -137,10 +137,19 @@ export function Hero() {
             <div className="absolute top-24 right-6 z-30">
               <button
                 onClick={() => setIsMuted(!isMuted)}
-                className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-colors"
-                title={isMuted ? "Unmute" : "Mute"}
+                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-colors font-medium text-sm"
               >
-                {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} />}
+                {isMuted ? (
+                  <>
+                    <VolumeX size={18} />
+                    Unmute
+                  </>
+                ) : (
+                  <>
+                    <Volume2 size={18} />
+                    Mute
+                  </>
+                )}
               </button>
             </div>
 
