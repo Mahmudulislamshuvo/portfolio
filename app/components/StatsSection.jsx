@@ -1,17 +1,17 @@
-import { getGithubCommits } from '../actions/github';
-import aboutData from '../data/about.json';
+import { getGithubCommits } from "../actions/github";
+import aboutData from "../data/about.json";
 
 export default async function StatsSection() {
   // Extract username from github URL
   const githubUrl = aboutData.socials?.github || "";
-  const username = githubUrl.split('/').pop();
-  
+  const username = githubUrl.split("/").pop();
+
   // Fetch real-time commit count
   const commits = await getGithubCommits(username);
-  
+
   // Update the stats dynamically
-  const dynamicStats = aboutData.stats.map(stat => {
-    if (stat.label === 'CODE COMMITS' && commits) {
+  const dynamicStats = aboutData.stats.map((stat) => {
+    if (stat.label === "CODE COMMITS" && commits) {
       return { ...stat, value: `${commits}+` };
     }
     return stat;
@@ -42,7 +42,7 @@ export const StatsSkeleton = () => {
       {[1, 2, 3, 4].map((i) => (
         <div
           key={i}
-          className="bg-[#111722] border border-slate-800/80 rounded-xl p-5 text-center flex flex-col items-center justify-center animate-pulse h-[98px]"
+          className="bg-[#111722] border border-slate-800/80 rounded-xl p-5 text-center flex flex-col items-center justify-center animate-pulse h-24.5"
         >
           <div className="h-7 sm:h-9 bg-slate-800 rounded w-16 mb-2"></div>
           <div className="h-3 bg-slate-800 rounded w-24"></div>
