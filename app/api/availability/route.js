@@ -1,7 +1,5 @@
 import { NextResponse } from 'next/server';
 import { getCalendar } from '@/lib/googleCalendar';
-import { parseISO, addHours, formatISO, isBefore, isAfter, parse, addDays, isEqual } from 'date-fns';
-import { toZonedTime, format } from 'date-fns-tz'; // Wait, date-fns-tz might not be installed. Let's use simple JS Date methods instead.
 
 export async function GET(request) {
   try {

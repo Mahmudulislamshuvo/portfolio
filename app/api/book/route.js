@@ -32,7 +32,6 @@ export async function POST(request) {
               dateTime: endTime.toISOString(),
               timeZone: 'Asia/Dhaka',
             },
-            attendees: [{ email }],
           },
         });
       } catch (calError) {
