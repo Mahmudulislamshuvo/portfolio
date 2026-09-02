@@ -1,14 +1,19 @@
-import { Code2, Layers, Terminal } from 'lucide-react';
+import { Code2, Layers, Terminal, Database } from 'lucide-react';
 import skillsData from '../data/skills.json';
 
 export const Skills = () => {
   const getIcon = (iconName) => {
     switch (iconName) {
       case 'Code2':
+      case 'Code':
         return <Code2 className="w-5 h-5 text-cyan-400" />;
       case 'Layers':
+      case 'Layout':
         return <Layers className="w-5 h-5 text-indigo-400" />;
+      case 'Database':
+        return <Database className="w-5 h-5 text-emerald-400" />;
       case 'Wrench':
+      case 'Terminal':
       default:
         return <Terminal className="w-5 h-5 text-blue-400" />;
     }
@@ -28,8 +33,8 @@ export const Skills = () => {
           </h2>
         </div>
 
-        {/* 3 Skill Category Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Skill Category Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {skillsData.categories.map((category) => (
             <div
               key={category.id}
@@ -58,7 +63,7 @@ export const Skills = () => {
               </div>
 
               <div className="mt-6 pt-4 border-t border-slate-800/50 flex items-center justify-between text-[11px] font-mono text-slate-400">
-                <span>Proficiency: Senior</span>
+                <span>Proficiency: {category.proficiency || "Beginner"}</span>
                 <span className="text-cyan-400/80">{category.items.length} Technologies</span>
               </div>
             </div>

@@ -4,35 +4,58 @@
       "id": 1,
       "title": "Frontend Core",
       "icon": "Code",
+      "proficiency": "Intermediate",
       "items": [
         "JavaScript (ES6+)",
         "HTML5",
         "CSS3 / Modern CSS",
-        "TypeScript"
+        "TypeScript",
+        "Design",
+        "ES6+ / Modern JS"
       ]
     },
     {
       "id": 2,
       "title": "Frameworks & Libraries",
       "icon": "Layout",
+      "proficiency": "Intermediate",
       "items": [
         "React.js",
         "Next.js",
         "Tailwind CSS",
         "Framer Motion",
-        "Redux Toolkit"
+        "Redux Toolkit",
+        "TanStack Query (React Query)",
+        "NextAuth / Auth.js",
+        "jwt-decode"
       ]
     },
     {
       "id": 3,
       "title": "Tools & Platforms",
       "icon": "Terminal",
+      "proficiency": "Familiar",
       "items": [
         "Git & GitHub",
         "VS Code",
         "Figma",
         "Vercel",
-        "REST APIs"
+        "REST APIs",
+        "Docker",
+        "Postman"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Backend & Database",
+      "icon": "Database",
+      "proficiency": "Beginner",
+      "items": [
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Mongoose",
+        "RESTful APIs"
       ]
     }
   ]

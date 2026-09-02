@@ -83,7 +83,9 @@ export const Navbar = () => {
               className={`transition-colors duration-200 hover:text-cyan-400 ${
                 activeSection === item.href.substring(1)
                   ? "text-cyan-400 font-semibold"
-                  : "text-slate-400"
+                  : scrolled 
+                    ? "text-slate-400"
+                    : "text-black font-semibold"
               }`}
             >
               {item.label}
@@ -106,7 +108,11 @@ export const Navbar = () => {
         <div className="flex sm:hidden items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800/60 transition-colors"
+            className={`p-2 rounded-lg transition-colors ${
+              scrolled 
+                ? "text-slate-400 hover:text-white hover:bg-slate-800/60"
+                : "text-black hover:text-slate-700 hover:bg-white/20"
+            }`}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (

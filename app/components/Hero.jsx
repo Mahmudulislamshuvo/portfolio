@@ -9,8 +9,15 @@ import {
   VolumeX,
   SkipForward,
   RotateCcw,
+  Mail,
 } from "lucide-react";
 import aboutData from "../data/about.json";
+import {
+  GithubIcon,
+  LinkedinIcon,
+  TwitterIcon,
+  FacebookIcon,
+} from "./SocialIcons";
 
 // react-water-wave uses window/document, so disable SSR
 const WaterWave = dynamic(() => import("react-water-wave"), { ssr: false });
@@ -77,21 +84,37 @@ export function Hero() {
         }}
       >
         {() => (
-          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-6 text-center text-white bg-black/40">
+          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-6 text-center text-white bg-black/30">
+            {/* Available for work badge */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={!showVideoLayer ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/20 bg-black/40 backdrop-blur-sm"
+            >
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-[10px] font-medium text-emerald-400 tracking-wider uppercase">
+                Available for work
+              </span>
+            </motion.div>
+
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={!showVideoLayer ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-5xl md:text-7xl font-bold tracking-tight mb-4"
             >
-              Hi, I am <span className="text-blue-500">{aboutData.name}</span>
+              Hi, I am <span className="text-cyan-400">{aboutData.name}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={!showVideoLayer ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-zinc-300 max-w-2xl mb-12"
+              className="text-xl md:text-2xl font-bold text-slate-200 max-w-2xl mb-12"
             >
               {aboutData.role}
             </motion.p>
@@ -101,10 +124,53 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={!showVideoLayer ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="p-4 rounded-full border border-white/20 hover:bg-white/10 transition-colors animate-bounce"
+              className="p-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors animate-bounce mt-4 text-white/70 hover:text-white"
             >
-              <ArrowDown size={24} />
+              <ArrowDown size={22} />
             </motion.a>
+
+            {/* Social Icons (Bottom Left) */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={!showVideoLayer ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.8 }}
+              className="absolute left-4 md:left-8 bottom-12 flex flex-col gap-4 z-30"
+            >
+              {[
+                {
+                  icon: GithubIcon,
+                  href: "https://github.com/Mahmudulislamshuvo",
+                  label: "GitHub",
+                },
+                {
+                  icon: LinkedinIcon,
+                  href: "https://www.linkedin.com/in/mahmudul-islam-shuvo/",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: FacebookIcon,
+                  href: "https://www.facebook.com/mahmudulislamshuvo.bd/",
+                  label: "Facebook",
+                },
+                {
+                  icon: Mail,
+                  href: "mailto:mahmudulislammern@gmail.com",
+                  label: "Email",
+                },
+              ].map((soc, idx) => (
+                <a
+                  key={idx}
+                  href={soc.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={soc.label}
+                  className="w-9 h-9 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:border-white/30 text-white/70 hover:text-white flex items-center justify-center transition-all duration-300"
+                >
+                  <soc.icon className="w-4 h-4" />
+                </a>
+              ))}
+              <div className="w-px h-12 bg-white/10 mx-auto mt-2 hidden md:block"></div>
+            </motion.div>
           </div>
         )}
       </WaterWave>
