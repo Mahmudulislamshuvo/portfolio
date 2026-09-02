@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "./components/ThemeProvider";
+import aboutData from "./data/about.json";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,8 +14,33 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Portfolio | Frontend Developer",
-  description: "Minimalist and interactive portfolio",
+  title: `${aboutData.name} | ${aboutData.role}`,
+  description: aboutData.bio,
+  openGraph: {
+    title: `${aboutData.name} | ${aboutData.role}`,
+    description: aboutData.bio,
+    siteName: aboutData.name,
+    images: [
+      {
+        url: '/my.jpg',
+        width: 1200,
+        height: 630,
+        alt: `${aboutData.name} - ${aboutData.role}`,
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: `${aboutData.name} | ${aboutData.role}`,
+    description: aboutData.bio,
+    images: ['/my.jpg'],
+  },
+  icons: {
+    icon: '/my.jpg',
+    apple: '/my.jpg',
+  }
 };
 
 export default function RootLayout({ children }) {

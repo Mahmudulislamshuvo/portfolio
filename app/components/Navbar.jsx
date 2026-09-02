@@ -70,7 +70,7 @@ export const Navbar = () => {
             ⚡
           </div>
           <span className="tracking-tight text-slate-100 font-semibold flex items-center gap-1.5">
-            Dev<span className="text-cyan-400">Portfolio</span>
+            Mahmudul <span className="text-cyan-400">Islam</span>
           </span>
         </a>
 
