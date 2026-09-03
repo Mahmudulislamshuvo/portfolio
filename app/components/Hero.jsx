@@ -105,9 +105,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={!showVideoLayer ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold tracking-tight mb-4"
+              className="text-5xl md:text-7xl font-bold tracking-tight mb-4 drop-shadow-lg"
             >
-              Hi, I am <span className="text-cyan-400">{aboutData.name}</span>
+              Hi, I am <span className="text-cyan-400 drop-shadow-md">{aboutData.name}</span>
             </motion.h1>
 
             <motion.p

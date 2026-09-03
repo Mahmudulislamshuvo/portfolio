@@ -57,7 +57,7 @@ export const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#080B11]/85 backdrop-blur-md border-b border-slate-800/80 py-3.5 shadow-2xl shadow-black/50"
-          : "bg-transparent py-5"
+          : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -69,7 +69,7 @@ export const Navbar = () => {
           <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-500 to-indigo-600 flex items-center justify-center text-white text-sm font-black shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
             ⚡
           </div>
-          <span className="tracking-tight text-slate-100 font-semibold flex items-center gap-1.5">
+          <span className="tracking-tight text-slate-100 font-semibold flex items-center gap-1.5 drop-shadow-md">
             Mahmudul <span className="text-cyan-400">Islam</span>
           </span>
         </a>
@@ -80,12 +80,12 @@ export const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              className={`transition-colors duration-200 hover:text-cyan-400 ${
+              className={`transition-colors duration-200 hover:text-cyan-400 drop-shadow-md ${
                 activeSection === item.href.substring(1)
                   ? "text-cyan-400 font-semibold"
                   : scrolled 
                     ? "text-slate-400"
-                    : "text-black font-semibold"
+                    : "text-white font-medium"
               }`}
             >
               {item.label}
@@ -111,7 +111,7 @@ export const Navbar = () => {
             className={`p-2 rounded-lg transition-colors ${
               scrolled 
                 ? "text-slate-400 hover:text-white hover:bg-slate-800/60"
-                : "text-black hover:text-slate-700 hover:bg-white/20"
+                : "text-white hover:text-slate-200 hover:bg-white/20"
             }`}
             aria-label="Toggle menu"
           >
