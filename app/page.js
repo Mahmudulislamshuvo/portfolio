@@ -10,6 +10,8 @@ import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import reviewsData from "./data/reviews.json";
 
+import { ScrollReveal } from "./components/ScrollReveal";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#080B11] text-slate-300 relative selection:bg-indigo-500/30 selection:text-indigo-200">
@@ -21,13 +23,13 @@ export default function Home() {
           <Hero />
         </section>
         
-        <About />
-        <Skills />
-        <Projects />
-        <Experience />
-        <Education />
-        <Reviews reviews={reviewsData} />
-        <Contact />
+        <ScrollReveal direction="left"><About /></ScrollReveal>
+        <ScrollReveal direction="right"><Skills /></ScrollReveal>
+        <ScrollReveal direction="left"><Projects /></ScrollReveal>
+        <ScrollReveal direction="right"><Experience /></ScrollReveal>
+        <ScrollReveal direction="left"><Education /></ScrollReveal>
+        <ScrollReveal direction="right"><Reviews reviews={reviewsData} /></ScrollReveal>
+        <ScrollReveal direction="up"><Contact /></ScrollReveal>
       </main>
 
       <Footer />
