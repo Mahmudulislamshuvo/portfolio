@@ -14,7 +14,7 @@ import { ScrollReveal } from "./components/ScrollReveal";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#080B11] text-slate-300 relative selection:bg-indigo-500/30 selection:text-indigo-200">
+    <div className="min-h-screen bg-[#080B11] text-slate-300 relative selection:bg-indigo-500/30 selection:text-indigo-200 overflow-x-hidden">
       <Navbar />
 
       <main>
