@@ -1,25 +1,25 @@
 "use client";
-import React from 'react';
-import { X, Download, FileText } from 'lucide-react';
+import React, { useEffect } from "react";
+import { X, Download, FileText } from "lucide-react";
 
 export const ResumeModal = ({ isOpen, onClose }) => {
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   const handleDownload = () => {
-    const textContent = 
-      "FRONTEND DEVELOPER RESUME\n\n" +
-      "Summary: Passionate Frontend Developer dedicated to building high-performance, accessible, and beautiful web applications with 5+ years experience.\n\n" +
-      "Experience:\n" +
-      "- Senior Frontend Engineer | TechNova Solutions (2022 - Present)\n" +
-      "- Web Developer | Digital Stream Co. (2020 - 2022)\n" +
-      "- Junior Developer | StartUp Hub (2018 - 2020)\n\n" +
-      "Skills: JavaScript, TypeScript, React.js, Next.js, Tailwind CSS, Framer Motion, Redux Toolkit, Git, REST APIs, UI/UX.\n\n" +
-      "Contact: hello@portfolio.dev | San Francisco, CA";
-
-    const element = document.createElement('a');
-    const file = new Blob([textContent], { type: 'text/plain;charset=utf-8' });
-    element.href = URL.createObjectURL(file);
-    element.download = 'Frontend_Developer_Resume_2026.txt';
+    const element = document.createElement("a");
+    element.href = "/Mahmudul_Islam_Resume.pdf";
+    element.download = "Mahmudul_Islam_Resume.pdf";
     document.body.appendChild(element);
     element.click();
     document.body.removeChild(element);
@@ -40,27 +40,31 @@ export const ResumeModal = ({ isOpen, onClose }) => {
             <FileText className="w-6 h-6" />
           </div>
           <div>
-            <h3 className="text-xl font-bold text-white">Frontend Developer Resume</h3>
-            <p className="text-xs text-slate-400">Updated for 2026 · ATS Optimized & Verified</p>
+            <h3 className="text-xl font-bold text-white">
+              Frontend Developer Resume
+            </h3>
+            <p className="text-xs text-slate-400">
+              Updated for 2026 · ATS Optimized & Verified
+            </p>
           </div>
         </div>
 
         <div className="space-y-3 bg-[#141A26] border border-slate-800 rounded-xl p-4 text-xs text-slate-300 font-mono mb-6">
           <div className="flex justify-between py-1 border-b border-slate-800/60">
             <span className="text-slate-500">Name:</span>
-            <span className="text-white font-semibold">Frontend Developer</span>
+            <span className="text-white font-semibold">Mahmudul Islam</span>
           </div>
           <div className="flex justify-between py-1 border-b border-slate-800/60">
-            <span className="text-slate-500">Experience:</span>
-            <span className="text-cyan-400">5+ Years (Senior)</span>
+            <span className="text-slate-500">Role:</span>
+            <span className="text-cyan-400">Frontend / MERN Stack Developer</span>
           </div>
           <div className="flex justify-between py-1 border-b border-slate-800/60">
             <span className="text-slate-500">Core Stack:</span>
-            <span className="text-white">React, Next.js 14, TypeScript</span>
+            <span className="text-white">React, Next.js, Node.js, MongoDB</span>
           </div>
           <div className="flex justify-between py-1">
             <span className="text-slate-500">Location:</span>
-            <span className="text-white">San Francisco, CA / Remote</span>
+            <span className="text-white">Gazipur, Bangladesh</span>
           </div>
         </div>
 
