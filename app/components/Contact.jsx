@@ -1,17 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import {
-  Mail,
-  MapPin,
-  Send,
-  CheckCircle2,
-  Calendar,
-  Clock,
-  User,
-  Loader2,
-  ArrowRight,
-  ArrowLeft,
-} from "lucide-react";
+import { FaEnvelope as Mail, FaMapMarkerAlt as MapPin, FaPaperPlane as Send, FaCheckCircle as CheckCircle2, FaCalendarAlt as Calendar, FaClock as Clock, FaUser as User, FaSpinner as Loader2, FaArrowRight as ArrowRight, FaArrowLeft as ArrowLeft } from "react-icons/fa";
 import {
   GithubIcon,
   LinkedinIcon,

@@ -1,4 +1,4 @@
-import { Star } from 'lucide-react';
+import { FaStar as Star } from "react-icons/fa";
 
 export const Reviews = ({ reviews }) => {
   return (

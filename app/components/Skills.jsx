@@ -1,4 +1,4 @@
-import { Code2, Layers, Terminal, Database } from 'lucide-react';
+import { FaCode as Code2, FaLayerGroup as Layers, FaTerminal as Terminal, FaDatabase as Database } from "react-icons/fa";
 import skillsData from '../data/skills.json';
 
 export const Skills = () => {

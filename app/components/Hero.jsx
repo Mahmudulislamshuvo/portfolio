@@ -3,14 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowDown,
-  Volume2,
-  VolumeX,
-  SkipForward,
-  RotateCcw,
-  Mail,
-} from "lucide-react";
+import { FaArrowDown as ArrowDown, FaVolumeUp as Volume2, FaVolumeMute as VolumeX, FaStepForward as SkipForward, FaUndo as RotateCcw, FaEnvelope as Mail } from "react-icons/fa";
 import aboutData from "../data/about.json";
 import {
   GithubIcon,
@@ -27,17 +20,26 @@ export function Hero() {
   const [isSkipped, setIsSkipped] = useState(false);
   const [isEnded, setIsEnded] = useState(false);
   const [isMuted, setIsMuted] = useState(true); // Default muted for autoplay policies
+  const [isInitialized, setIsInitialized] = useState(false);
 
   const videoRef = useRef(null);
 
   useEffect(() => {
-    if (videoRef.current && isVideoValid && !isSkipped && !isEnded) {
+    const seen = sessionStorage.getItem("introSeen");
+    if (seen === "true") {
+      setIsSkipped(true);
+    }
+    setIsInitialized(true);
+  }, []);
+
+  useEffect(() => {
+    if (isInitialized && videoRef.current && isVideoValid && !isSkipped && !isEnded) {
       videoRef.current.play().catch(() => {
         // Fallback if autoplay is totally blocked
         setIsVideoValid(false);
       });
     }
-  }, [isVideoValid, isSkipped, isEnded]);
+  }, [isVideoValid, isSkipped, isEnded, isInitialized]);
 
   const handleVideoError = () => {
     setIsVideoValid(false);
@@ -45,6 +47,7 @@ export function Hero() {
 
   const handleSkip = () => {
     setIsSkipped(true);
+    sessionStorage.setItem("introSeen", "true");
     if (videoRef.current) {
       videoRef.current.pause();
     }
@@ -53,6 +56,7 @@ export function Hero() {
   const handleReplay = () => {
     setIsEnded(false);
     setIsSkipped(false);
+    sessionStorage.removeItem("introSeen");
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
       videoRef.current.play();
@@ -61,9 +65,10 @@ export function Hero() {
 
   const handleEnded = () => {
     setIsEnded(true);
+    sessionStorage.setItem("introSeen", "true");
   };
 
-  const showVideoLayer = isVideoValid && !isSkipped && !isEnded;
+  const showVideoLayer = isInitialized && isVideoValid && !isSkipped && !isEnded;
 
   return (
     <section

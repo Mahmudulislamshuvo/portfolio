@@ -1,7 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Download, Menu, X } from "lucide-react";
+import { FaDownload as Download, FaBars as Menu, FaTimes as X } from "react-icons/fa";
 import { ResumeModal } from "./ResumeModal";
+import Image from "next/image";
+import logo from "../../public/logo.png";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -38,8 +40,11 @@ export const Navbar = () => {
       let current = "";
       for (const section of sections) {
         const el = document.getElementById(section);
-        if (el && window.scrollY >= el.offsetTop - 300) {
-          current = section;
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 300) {
+            current = section;
+          }
         }
       }
 
@@ -48,8 +53,17 @@ export const Navbar = () => {
       }
     };
 
+    // Run immediately on mount
+    handleScroll();
+    
+    // Run again shortly after to catch browser scroll restoration
+    const timeoutId = setTimeout(handleScroll, 100);
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
@@ -57,18 +71,18 @@ export const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#080B11]/85 backdrop-blur-md border-b border-slate-800/80 py-3.5 shadow-2xl shadow-black/50"
-          : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5"
+          : "bg-linear-to-b from-black/80 via-black/40 to-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <a
           href="#home"
-          className="flex items-center gap-2.5 text-white font-bold text-lg group"
+          className="flex items-center text-center gap-x-1 text-white font-bold text-lg group"
         >
-          <div className="w-8 h-8 rounded-lg bg-linear-to-br from-cyan-500 to-indigo-600 flex items-center justify-center text-white text-sm font-black shadow-lg shadow-indigo-500/25 group-hover:scale-105 transition-transform">
-            ⚡
-          </div>
+          <span>
+            <Image src={logo} alt="Logo" height={40} width={40} />
+          </span>
           <span className="tracking-tight text-slate-100 font-semibold flex items-center gap-1.5 drop-shadow-md">
             Mahmudul <span className="text-cyan-400">Islam</span>
           </span>
@@ -83,7 +97,7 @@ export const Navbar = () => {
               className={`transition-colors duration-200 hover:text-cyan-400 drop-shadow-md ${
                 activeSection === item.href.substring(1)
                   ? "text-cyan-400 font-semibold"
-                  : scrolled 
+                  : scrolled
                     ? "text-slate-400"
                     : "text-white font-medium"
               }`}
@@ -109,7 +123,7 @@ export const Navbar = () => {
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`p-2 rounded-lg transition-colors ${
-              scrolled 
+              scrolled
                 ? "text-slate-400 hover:text-white hover:bg-slate-800/60"
                 : "text-white hover:text-slate-200 hover:bg-white/20"
             }`}

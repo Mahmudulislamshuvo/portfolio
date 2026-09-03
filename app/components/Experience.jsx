@@ -1,4 +1,4 @@
-import { Calendar } from 'lucide-react';
+import { FaCalendarAlt as Calendar } from "react-icons/fa";
 import experienceData from '../data/experience.json';
 
 export const Experience = () => {

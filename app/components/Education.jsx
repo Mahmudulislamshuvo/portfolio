@@ -1,4 +1,4 @@
-import { Calendar, GraduationCap } from 'lucide-react';
+import { FaCalendarAlt as Calendar, FaGraduationCap as GraduationCap } from "react-icons/fa";
 import educationData from '../data/education.json';
 
 export const Education = () => {

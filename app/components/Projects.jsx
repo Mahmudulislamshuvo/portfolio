@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import { ExternalLink } from 'lucide-react';
+import { FaExternalLinkAlt as ExternalLink, FaArrowRight as ArrowRight } from "react-icons/fa";
+import Link from 'next/link';
 import projectsData from '../data/projects.json';
 import { GithubIcon } from './SocialIcons';
 
@@ -55,7 +56,7 @@ export const Projects = () => {
               key={project.id}
               className="bg-[#111722] border border-slate-800/80 hover:border-slate-700 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group flex flex-col justify-between"
             >
-              <div>
+              <Link href={`/projects/${project.id}`} className="block focus:outline-none">
                 <div className="relative h-48 overflow-hidden bg-slate-950">
                   <img
                     src={project.thumbnail}
@@ -70,8 +71,9 @@ export const Projects = () => {
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors">
+                  <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors flex items-center justify-between">
                     {project.title}
+                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
                   </h3>
                   <p className="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-3 leading-relaxed">
                     {project.description}
@@ -88,26 +90,30 @@ export const Projects = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </Link>
 
-              <div className="px-6 pb-6 pt-2 flex items-center justify-between border-t border-slate-800/60 mt-2">
-                {project.liveUrl && (
+              <div className="px-6 pb-6 pt-2 flex items-center gap-4 border-t border-slate-800/60 mt-2">
+                <Link href={`/projects/${project.id}`} className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors mr-auto">
+                  <span>Details</span>
+                </Link>
+                
+                {project.links?.live && (
                   <a
-                    href={project.liveUrl}
+                    href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
                   >
-                    <span>Live Demo</span>
+                    <span>Live</span>
                     <ExternalLink className="w-3.5 h-3.5" />
                   </a>
                 )}
-                {project.githubUrl && (
+                {(project.links?.github || project.links?.githubClient) && (
                   <a
-                    href={project.githubUrl}
+                    href={project.links.github || project.links.githubClient}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors ml-auto"
+                    className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors"
                   >
                     <GithubIcon className="w-3.5 h-3.5" />
                     <span>Source</span>

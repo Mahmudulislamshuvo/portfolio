@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowLeft, Star, Send } from "lucide-react";
+import { FaArrowLeft as ArrowLeft, FaStar as Star, FaPaperPlane as Send } from "react-icons/fa";
 import Link from "next/link";
 
 export default function Feedback() {

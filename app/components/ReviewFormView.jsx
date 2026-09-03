@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from 'react';
-import { ArrowLeft, User, Building2, FolderKanban, Star, MessageSquare, Send, Check } from 'lucide-react';
+import { FaArrowLeft as ArrowLeft, FaUser as User, FaBuilding as Building2, FaFolder as FolderKanban, FaStar as Star, FaCommentAlt as MessageSquare, FaPaperPlane as Send, FaCheck as Check } from "react-icons/fa";
 import { AVATAR_OPTIONS } from '../data/portfolioData';
 
 import { useRouter } from "next/navigation";

@@ -5,14 +5,32 @@
     "description": "Sustainable Shopping Experience",
     "category": "React/Next.js",
     "thumbnail": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
-    "techStack": ["Next.js", "Tailwind CSS", "Stripe"],
+    "techStack": ["Next.js", "Tailwind CSS", "Stripe", "Prisma"],
+    "links": {
+      "live": "https://example.com",
+      "githubClient": "https://github.com/example/client",
+      "githubServer": "https://github.com/example/server"
+    },
     "details": {
       "role": "Lead Frontend Developer",
       "client": "EcoMart Global Inc.",
       "timeline": "4 Months (2023)",
-      "challenge": "The client needed a platform that could handle high traffic while maintaining a buttery-smooth 60fps interaction experience.",
-      "solution": "We implemented an advanced asset-loading strategy using Next.js 13 streaming and Suspense.",
-      "features": ["Dynamic Filtering", "One-Click Checkout", "Adaptive Layout"],
+      "challenge": "The client needed a platform that could handle high traffic while maintaining a buttery-smooth 60fps interaction experience. The cart state needed to be consistent across multiple tabs and devices.",
+      "solution": "We implemented an advanced asset-loading strategy using Next.js 13 streaming and Suspense. We also utilized a robust global state management setup integrated with local storage for cross-tab synchronization.",
+      "features": [
+        {
+          "title": "Dynamic Filtering",
+          "description": "Fast and responsive product filtering without page reloads."
+        },
+        {
+          "title": "One-Click Checkout",
+          "description": "Streamlined checkout process integrated seamlessly with Stripe."
+        },
+        {
+          "title": "Adaptive Layout",
+          "description": "Fully responsive design that adapts to mobile, tablet, and desktop views."
+        }
+      ],
       "outcomes": [
         { "label": "LIGHTHOUSE SCORE", "value": "98/100" },
         { "label": "CONVERSION RATE", "value": "+40%" },
@@ -20,7 +38,8 @@
       ],
       "screenshots": [
         "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80"
       ]
     }
   },
@@ -31,18 +50,18 @@
     "category": "Full-Stack",
     "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
     "techStack": ["React", "Node.js", "MongoDB"],
+    "links": {
+      "github": "https://github.com/example/fintech"
+    },
     "details": {
       "role": "Full-Stack Developer",
-      "client": "Alpha Bank",
-      "timeline": "6 Months (2022)",
       "challenge": "Needed a secure, real-time dashboard for high-net-worth clients.",
-      "solution": "Built a scalable microservices architecture.",
+      "solution": "Built a scalable microservices architecture with WebSockets for live data.",
       "features": ["Real-time Analytics", "Secure Authentication", "Custom Reporting"],
       "outcomes": [
         { "label": "USER ENGAGEMENT", "value": "+60%" },
         { "label": "API RESPONSE", "value": "< 100ms" }
-      ],
-      "screenshots": []
+      ]
     }
   }
 ]

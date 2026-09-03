@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUp } from "lucide-react";
+import { FaArrowUp as ArrowUp } from "react-icons/fa";
 
 export const ScrollToTopButton = () => {
   const scrollToTop = () => {

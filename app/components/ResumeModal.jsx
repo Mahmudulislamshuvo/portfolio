@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { X, Download, FileText } from "lucide-react";
+import { FaTimes as X, FaDownload as Download, FaFileAlt as FileText } from "react-icons/fa";
 
 export const ResumeModal = ({ isOpen, onClose }) => {
   useEffect(() => {
