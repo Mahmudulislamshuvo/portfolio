@@ -8,7 +8,7 @@ import {
   FacebookIcon,
 } from "./SocialIcons";
 import { motion, AnimatePresence } from "framer-motion";
-import { addDays, format, getDay } from "date-fns";
+import { getNextAvailableDays, formatDate as format } from "../../lib/dateUtils";
 
 export const Contact = () => {
   const [activeTab, setActiveTab] = useState("meeting"); // "message" or "meeting"
@@ -25,15 +25,7 @@ export const Contact = () => {
   const [availableDays, setAvailableDays] = useState([]);
 
   useEffect(() => {
-    const days = [];
-    let d = new Date();
-    while (days.length < 14) {
-      if (d.getDay() !== 5) {
-        // Skip Friday
-        days.push(new Date(d));
-      }
-      d = addDays(d, 1);
-    }
+    const days = getNextAvailableDays(14);
     setAvailableDays(days);
   }, []);
 
