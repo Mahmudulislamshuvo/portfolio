@@ -89,7 +89,7 @@ export function Hero() {
         }}
       >
         {() => (
-          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-6 text-center text-text-primary bg-black/40">
+          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-6 text-center text-text-primary bg-black/55">
             {/* Available for work badge */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
@@ -109,16 +109,16 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={!showVideoLayer ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold tracking-tight mb-4"
+              className="text-5xl md:text-7xl font-bold tracking-tight mb-4 text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]"
             >
-              Hi, I am <span className="text-accent-text">{aboutData.name}</span>
+              Hi, I am <span className="text-[#A7F3D0]">{aboutData.name}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={!showVideoLayer ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl font-medium text-text-secondary max-w-2xl mb-12"
+              className="text-xl md:text-2xl font-medium text-white/90 drop-shadow-[0_1px_6px_rgba(0,0,0,0.7)] max-w-2xl mb-12"
             >
               {aboutData.role}
             </motion.p>

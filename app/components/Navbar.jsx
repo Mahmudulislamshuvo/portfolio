@@ -86,27 +86,32 @@ export const Navbar = () => {
             <Image src={logo} alt="Logo" height={40} width={40} />
           </span>
           <span className={`tracking-tight font-semibold flex items-center gap-1.5 ${scrolled ? "text-text-primary" : "text-white"}`}>
-            Mahmudul <span className="text-accent-text">Islam</span>
+            Mahmudul <span className={scrolled ? "text-accent-text" : "text-[#A7F3D0]"}>Islam</span>
           </span>
         </a>
 
         {/* Desktop Nav Items */}
         <nav className="hidden lg:flex items-center gap-7 text-sm font-medium">
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className={`transition-colors duration-200 hover:text-accent-text ${
-                activeSection === item.href.substring(1)
-                  ? "text-accent-text font-semibold"
-                  : scrolled
-                    ? "text-text-muted hover:text-text-primary"
-                    : "text-white font-medium hover:text-accent-text"
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
+          {navItems.map((item) => {
+            const isActive = activeSection === item.href.substring(1);
+            return (
+              <a
+                key={item.label}
+                href={item.href}
+                className={`transition-colors duration-200 relative ${
+                  scrolled
+                    ? isActive
+                      ? "text-accent-text font-semibold"
+                      : "text-text-muted hover:text-text-primary"
+                    : isActive
+                      ? "text-[#A7F3D0] font-semibold after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-[2px] after:bg-[#A7F3D0] after:rounded-full"
+                      : "text-white/85 hover:text-white font-medium"
+                }`}
+              >
+                {item.label}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Action Buttons */}
