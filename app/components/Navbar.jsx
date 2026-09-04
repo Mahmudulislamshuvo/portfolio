@@ -1,6 +1,10 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { FaDownload as Download, FaBars as Menu, FaTimes as X } from "react-icons/fa";
+import {
+  FaDownload as Download,
+  FaBars as Menu,
+  FaTimes as X,
+} from "react-icons/fa";
 import { ResumeModal } from "./ResumeModal";
 import Image from "next/image";
 import logo from "../../public/logo.png";
@@ -57,7 +61,7 @@ export const Navbar = () => {
 
     // Run immediately on mount
     handleScroll();
-    
+
     // Run again shortly after to catch browser scroll restoration
     const timeoutId = setTimeout(handleScroll, 100);
 
@@ -73,7 +77,7 @@ export const Navbar = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-bg-main/85 backdrop-blur-md border-b border-border-subtle py-3.5"
-          : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5"
+          : "bg-linear-to-b from-black/80 via-black/40 to-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -85,8 +89,13 @@ export const Navbar = () => {
           <span>
             <Image src={logo} alt="Logo" height={40} width={40} />
           </span>
-          <span className={`tracking-tight font-semibold flex items-center gap-1.5 ${scrolled ? "text-text-primary" : "text-white"}`}>
-            Mahmudul <span className={scrolled ? "text-accent-text" : "text-[#A7F3D0]"}>Islam</span>
+          <span
+            className={`tracking-tight font-semibold flex items-center gap-1.5 ${scrolled ? "text-text-primary" : "text-white"}`}
+          >
+            Mahmudul{" "}
+            <span className={scrolled ? "text-accent-text" : "text-[#A7F3D0]"}>
+              Islam
+            </span>
           </span>
         </a>
 
@@ -104,7 +113,7 @@ export const Navbar = () => {
                       ? "text-accent-text font-semibold"
                       : "text-text-muted hover:text-text-primary"
                     : isActive
-                      ? "text-[#A7F3D0] font-semibold after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-[2px] after:bg-[#A7F3D0] after:rounded-full"
+                      ? "text-[#A7F3D0] font-semibold after:content-[''] after:absolute after:-bottom-1.5 after:left-0 after:right-0 after:h-0.5 after:bg-[#A7F3D0] after:rounded-full"
                       : "text-white/85 hover:text-white font-medium"
                 }`}
               >
@@ -182,7 +191,3 @@ export const Navbar = () => {
     </header>
   );
 };
-
-
-
-

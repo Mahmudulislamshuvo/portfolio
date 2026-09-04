@@ -44,7 +44,7 @@ export const About = () => {
                   className="w-full h-80 sm:h-96 lg:h-full lg:absolute lg:inset-0 object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-bg-main/80 via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-linear-to-t from-bg-main/80 via-transparent to-transparent opacity-60" />
                 <div className="absolute bottom-4 left-4 right-4 p-3 bg-bg-surface/90 backdrop-blur-md rounded-md border border-border-subtle flex items-center justify-between text-xs font-mono">
                   <span className="text-accent-text flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-accent-text" />
