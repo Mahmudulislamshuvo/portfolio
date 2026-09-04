@@ -64,7 +64,6 @@ export const Projects = () => {
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-80" />
                   <span className="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-bg-surface/90 text-accent-text border border-border-subtle backdrop-blur-md">
                     {project.category}
                   </span>

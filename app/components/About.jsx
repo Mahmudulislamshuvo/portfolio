@@ -1,8 +1,8 @@
-import { Suspense } from 'react';
-import aboutData from '../data/about.json';
-import StatsSection, { StatsSkeleton } from './StatsSection';
-import Image from 'next/image';
-import MyImage from "../../public/my.jpg"
+import { Suspense } from "react";
+import aboutData from "../data/about.json";
+import StatsSection, { StatsSkeleton } from "./StatsSection";
+import Image from "next/image";
+import MyImage from "../../public/my.png";
 
 export const About = () => {
   return (
@@ -14,18 +14,17 @@ export const About = () => {
             <div>
               <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary flex items-center gap-3">
                 <span>About</span>
-                <span className="text-accent-text">
-                  Me
-                </span>
+                <span className="text-accent-text">Me</span>
               </h2>
             </div>
 
             <div className="space-y-4 text-text-muted text-sm sm:text-base leading-relaxed font-normal">
+              <p>{aboutData.bio}</p>
               <p>
-                {aboutData.bio}
-              </p>
-              <p>
-                For me, coding is all about solving real problems and making sure people actually enjoy using the websites I build. I prefer writing clean code, learning new tools, and keeping things simple but highly effective.
+                For me, coding is all about solving real problems and making
+                sure people actually enjoy using the websites I build. I prefer
+                writing clean code, learning new tools, and keeping things
+                simple but highly effective.
               </p>
             </div>
 
@@ -61,7 +60,3 @@ export const About = () => {
     </section>
   );
 };
-
-
-
-

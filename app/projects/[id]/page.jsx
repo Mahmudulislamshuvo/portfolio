@@ -150,7 +150,6 @@ export default function ProjectDetail({ params }) {
               {details.screenshots.map((imgUrl, idx) => (
                 <div key={idx} className="w-full aspect-video rounded-lg overflow-hidden bg-bg-card relative border border-border-subtle shadow-sm group">
                   <img src={imgUrl} alt={`${project.title} screenshot ${idx + 1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-60 pointer-events-none" />
                 </div>
               ))}
             </div>

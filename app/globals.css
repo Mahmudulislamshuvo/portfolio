@@ -24,24 +24,24 @@
 }
 
 :root {
-  /* LIGHT MODE (Studio Editorial) */
-  --bg-main: #F6F5F2;
+  /* LIGHT MODE (Clean Minimalist / Modern Tech) */
+  --bg-main: #F8FAFC;
   --bg-card: #FFFFFF;
-  --bg-card-hover: #EFECE6;
-  --bg-surface: #E8E4DB;
+  --bg-card-hover: #F1F5F9;
+  --bg-surface: #F8FAFC;
   
-  --text-primary: #18181B;
-  --text-secondary: #3F3F46;
-  --text-muted: #6B7280;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
   
-  --border-subtle: #E2DFD8;
-  --border-strong: #CBC6BA;
+  --border-subtle: #E2E8F0;
+  --border-strong: #CBD5E1;
 
-  --accent: #1F4E3D;
-  --accent-text: #1F4E3D;
-  --accent-hover: #173B2E;
+  --accent: #059669;
+  --accent-text: #059669;
+  --accent-hover: #047857;
   --accent-foreground: #FFFFFF;
-  --accent-subtle: rgba(31, 78, 61, 0.08);
+  --accent-subtle: rgba(5, 150, 105, 0.1);
 }
 
 .dark {
