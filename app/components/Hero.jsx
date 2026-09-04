@@ -89,7 +89,7 @@ export function Hero() {
         }}
       >
         {() => (
-          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-6 text-center text-text-primary dark:bg-black/55 bg-transparent transition-colors duration-500">
+          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-6 text-center text-text-primary bg-hero-overlay transition-colors duration-500">
             {/* Available for work badge */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}

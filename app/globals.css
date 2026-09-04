@@ -18,6 +18,8 @@
   --color-accent-hover: var(--accent-hover);
   --color-accent-foreground: var(--accent-foreground);
   --color-accent-subtle: var(--accent-subtle);
+  
+  --color-hero-overlay: var(--hero-overlay);
 
   --font-mono: var(--font-geist-mono), monospace;
   --font-sans: var(--font-geist-sans), sans-serif;
@@ -25,6 +27,7 @@
 
 :root {
   /* LIGHT MODE (Clean Minimalist / Modern Tech) */
+  --hero-overlay: transparent;
   --bg-main: #F8FAFC;
   --bg-card: #FFFFFF;
   --bg-card-hover: #F1F5F9;
@@ -46,6 +49,7 @@
 
 .dark {
   /* DARK MODE (Industrial Modern) */
+  --hero-overlay: rgba(0, 0, 0, 0.55);
   --bg-main: #121316;
   --bg-card: #1C1E24;
   --bg-card-hover: #242832;
