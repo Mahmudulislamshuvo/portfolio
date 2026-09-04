@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-[#0b0c10] text-zinc-900 dark:text-zinc-50 transition-colors duration-300`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bg-main text-text-primary transition-colors duration-300`}
       >
         <ThemeProvider
           attribute="class"
@@ -60,3 +60,7 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+
+
+

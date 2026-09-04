@@ -20,27 +20,27 @@ export const Projects = () => {
         {/* Header & Filter Controls */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary">
               Featured{' '}
-              <span className="text-cyan-400">
+              <span className="text-accent-text">
                 Projects
               </span>
             </h2>
-            <p className="text-slate-400 text-sm sm:text-base mt-2">
+            <p className="text-text-muted text-sm sm:text-base mt-2">
               A selection of my recent works across different technologies.
             </p>
           </div>
 
           {/* Filter Pills */}
-          <div className="flex flex-wrap items-center gap-2 p-1.5 rounded-full bg-[#0F141E] border border-slate-800/80 self-start md:self-auto shadow-inner">
+          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-lg bg-bg-surface border border-border-subtle self-start md:self-auto">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
-                className={`px-4 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 cursor-pointer ${
+                className={`px-3.5 py-1.5 rounded-md text-xs font-mono font-medium transition-all duration-200 cursor-pointer ${
                   activeFilter === filter
-                    ? 'bg-gradient-to-r from-indigo-600 to-blue-600 text-white shadow-md shadow-indigo-500/20'
-                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-800/50'
+                    ? 'bg-accent text-accent-foreground shadow-sm'
+                    : 'text-text-muted hover:text-text-primary hover:bg-bg-card-hover'
                 }`}
               >
                 {filter}
@@ -54,28 +54,28 @@ export const Projects = () => {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-[#111722] border border-slate-800/80 hover:border-slate-700 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1 group flex flex-col justify-between"
+              className="bg-bg-card border border-border-subtle hover:border-border-strong rounded-lg overflow-hidden transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 group flex flex-col justify-between"
             >
               <Link href={`/projects/${project.id}`} className="block focus:outline-none">
-                <div className="relative h-48 overflow-hidden bg-slate-950">
+                <div className="relative h-48 overflow-hidden bg-bg-surface">
                   <img
                     src={project.thumbnail}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0F141E] via-transparent to-transparent opacity-80" />
-                  <span className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-slate-900/90 text-cyan-300 border border-cyan-500/30 backdrop-blur-md">
+                  <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-80" />
+                  <span className="absolute top-3 right-3 px-2.5 py-1 rounded-md text-[11px] font-mono font-medium bg-bg-surface/90 text-accent-text border border-border-subtle backdrop-blur-md">
                     {project.category}
                   </span>
                 </div>
 
                 <div className="p-6">
-                  <h3 className="text-lg font-bold text-white group-hover:text-cyan-400 transition-colors flex items-center justify-between">
+                  <h3 className="text-lg font-bold text-text-primary group-hover:text-accent-text transition-colors flex items-center justify-between">
                     {project.title}
-                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                    <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 -translate-x-2 group-hover:translate-x-0 transition-all duration-300 text-accent-text" />
                   </h3>
-                  <p className="text-slate-400 text-xs sm:text-sm mt-2 line-clamp-3 leading-relaxed">
+                  <p className="text-text-muted text-xs sm:text-sm mt-2 line-clamp-3 leading-relaxed">
                     {project.description}
                   </p>
 
@@ -83,7 +83,7 @@ export const Projects = () => {
                     {project.techStack?.map((t, idx) => (
                       <span
                         key={idx}
-                        className="px-2.5 py-1 rounded-md text-[11px] font-mono text-slate-300 bg-[#161D2B] border border-slate-800"
+                        className="px-2.5 py-1 rounded-md text-[11px] font-mono text-text-secondary bg-bg-surface border border-border-subtle"
                       >
                         {t}
                       </span>
@@ -92,8 +92,8 @@ export const Projects = () => {
                 </div>
               </Link>
 
-              <div className="px-6 pb-6 pt-2 flex items-center gap-4 border-t border-slate-800/60 mt-2">
-                <Link href={`/projects/${project.id}`} className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-400 hover:text-indigo-300 transition-colors mr-auto">
+              <div className="px-6 pb-6 pt-2 flex items-center gap-4 border-t border-border-subtle mt-2">
+                <Link href={`/projects/${project.id}`} className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-text-secondary hover:text-accent-text transition-colors mr-auto">
                   <span>Details</span>
                 </Link>
                 
@@ -102,7 +102,7 @@ export const Projects = () => {
                     href={project.links.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-cyan-400 hover:text-cyan-300 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-accent-text hover:opacity-80 transition-colors"
                   >
                     <span>Live</span>
                     <ExternalLink className="w-3.5 h-3.5" />
@@ -113,7 +113,7 @@ export const Projects = () => {
                     href={project.links.github || project.links.githubClient}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs font-medium text-slate-400 hover:text-white transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-mono font-medium text-text-muted hover:text-text-primary transition-colors"
                   >
                     <GithubIcon className="w-3.5 h-3.5" />
                     <span>Source</span>
@@ -127,3 +127,7 @@ export const Projects = () => {
     </section>
   );
 };
+
+
+
+

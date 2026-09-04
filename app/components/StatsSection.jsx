@@ -22,12 +22,12 @@ export default async function StatsSection() {
       {dynamicStats.map((stat, idx) => (
         <div
           key={idx}
-          className="bg-[#111722] border border-slate-800/80 hover:border-slate-700 rounded-xl p-5 text-center transition-all duration-300 hover:shadow-md hover:-translate-y-1 group"
+          className="bg-bg-card border border-border-subtle hover:border-border-strong rounded-lg p-5 text-center transition-all duration-300 hover:shadow-sm hover:-translate-y-0.5 group"
         >
-          <div className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight group-hover:text-cyan-400 transition-colors">
+          <div className="text-2xl sm:text-3xl font-extrabold text-text-primary font-mono tracking-tight group-hover:text-accent-text transition-colors">
             {stat.value}
           </div>
-          <div className="text-[11px] font-semibold text-slate-400 tracking-wider mt-1 uppercase font-mono">
+          <div className="text-[11px] font-semibold text-text-muted tracking-wider mt-1 uppercase font-mono">
             {stat.label}
           </div>
         </div>
@@ -42,12 +42,16 @@ export const StatsSkeleton = () => {
       {[1, 2, 3, 4].map((i) => (
         <div
           key={i}
-          className="bg-[#111722] border border-slate-800/80 rounded-xl p-5 text-center flex flex-col items-center justify-center animate-pulse h-24.5"
+          className="bg-bg-card border border-border-subtle rounded-lg p-5 text-center flex flex-col items-center justify-center animate-pulse h-24.5"
         >
-          <div className="h-7 sm:h-9 bg-slate-800 rounded w-16 mb-2"></div>
-          <div className="h-3 bg-slate-800 rounded w-24"></div>
+          <div className="h-7 sm:h-9 bg-bg-surface rounded w-16 mb-2"></div>
+          <div className="h-3 bg-bg-surface rounded w-24"></div>
         </div>
       ))}
     </div>
   );
 };
+
+
+
+

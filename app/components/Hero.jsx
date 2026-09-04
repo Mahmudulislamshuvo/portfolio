@@ -89,19 +89,18 @@ export function Hero() {
         }}
       >
         {() => (
-          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-6 text-center text-white bg-black/30">
+          <div className="relative z-10 flex flex-col items-center justify-center w-full h-full px-6 text-center text-text-primary bg-black/40">
             {/* Available for work badge */}
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={!showVideoLayer ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
-              className="mb-6 inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-emerald-500/20 bg-black/40 backdrop-blur-sm"
+              className="mb-6 inline-flex items-center gap-2 px-3 py-1 rounded-md border border-border-subtle bg-bg-card/85 backdrop-blur-md"
             >
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                <span className="inline-flex rounded-full h-2 w-2 bg-accent-text"></span>
               </span>
-              <span className="text-[10px] font-medium text-emerald-400 tracking-wider uppercase">
+              <span className="text-[11px] font-mono font-medium text-accent-text tracking-wider uppercase">
                 Available for work
               </span>
             </motion.div>
@@ -110,16 +109,16 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={!showVideoLayer ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-7xl font-bold tracking-tight mb-4 drop-shadow-lg"
+              className="text-5xl md:text-7xl font-bold tracking-tight mb-4"
             >
-              Hi, I am <span className="text-cyan-400 drop-shadow-md">{aboutData.name}</span>
+              Hi, I am <span className="text-accent-text">{aboutData.name}</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={!showVideoLayer ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl font-bold text-slate-200 max-w-2xl mb-12"
+              className="text-xl md:text-2xl font-medium text-text-secondary max-w-2xl mb-12"
             >
               {aboutData.role}
             </motion.p>
@@ -129,9 +128,9 @@ export function Hero() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={!showVideoLayer ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.8, delay: 0.6 }}
-              className="p-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors animate-bounce mt-4 text-white/70 hover:text-white"
+              className="p-3 rounded-md border border-border-subtle hover:border-accent-text transition-colors mt-4 text-text-muted hover:text-accent-text cursor-pointer"
             >
-              <ArrowDown size={22} />
+              <ArrowDown size={20} />
             </motion.a>
 
             {/* Social Icons (Bottom Left) */}
@@ -169,12 +168,12 @@ export function Hero() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={soc.label}
-                  className="w-9 h-9 rounded-full bg-black/40 backdrop-blur-sm border border-white/10 hover:border-white/30 text-white/70 hover:text-white flex items-center justify-center transition-all duration-300"
+                  className="w-9 h-9 rounded-md bg-bg-card/85 backdrop-blur-md border border-border-subtle hover:border-accent-text text-text-muted hover:text-accent-text flex items-center justify-center transition-all duration-200"
                 >
                   <soc.icon className="w-4 h-4" />
                 </a>
               ))}
-              <div className="w-px h-12 bg-white/10 mx-auto mt-2 hidden md:block"></div>
+              <div className="w-px h-12 bg-border-subtle mx-auto mt-2 hidden md:block"></div>
             </motion.div>
           </div>
         )}
@@ -208,16 +207,16 @@ export function Hero() {
             <div className="absolute top-24 right-6 z-30">
               <button
                 onClick={() => setIsMuted(!isMuted)}
-                className="flex items-center gap-2 px-4 py-2 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-colors font-medium text-sm"
+                className="flex items-center gap-2 px-3.5 py-1.5 bg-bg-card/85 hover:bg-bg-card border border-border-subtle backdrop-blur-md rounded-md text-text-primary transition-colors font-mono text-xs cursor-pointer"
               >
                 {isMuted ? (
                   <>
-                    <VolumeX size={18} />
+                    <VolumeX size={16} />
                     Unmute
                   </>
                 ) : (
                   <>
-                    <Volume2 size={18} />
+                    <Volume2 size={16} />
                     Mute
                   </>
                 )}
@@ -228,10 +227,10 @@ export function Hero() {
             <div className="absolute bottom-12 left-0 right-0 flex justify-center z-30 px-6">
               <button
                 onClick={handleSkip}
-                className="flex items-center gap-2 px-6 py-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-colors font-medium tracking-wide"
+                className="flex items-center gap-2 px-5 py-2.5 bg-bg-card/85 hover:bg-bg-card border border-border-subtle backdrop-blur-md rounded-md text-text-primary transition-colors font-mono text-xs tracking-wider uppercase cursor-pointer"
               >
                 Skip Intro
-                <SkipForward size={20} />
+                <SkipForward size={16} />
               </button>
             </div>
           </motion.div>
@@ -249,10 +248,10 @@ export function Hero() {
           >
             <button
               onClick={handleReplay}
-              className="flex items-center gap-2 px-4 py-3 bg-black/50 hover:bg-black/70 backdrop-blur-md rounded-full text-white border border-white/10 transition-colors font-medium text-sm"
+              className="flex items-center gap-2 px-4 py-2 bg-bg-card/85 hover:bg-bg-card border border-border-subtle backdrop-blur-md rounded-md text-text-primary transition-colors font-mono text-xs cursor-pointer"
               title="Replay Intro"
             >
-              <RotateCcw size={16} />
+              <RotateCcw size={14} />
               Replay
             </button>
           </motion.div>
@@ -261,3 +260,8 @@ export function Hero() {
     </section>
   );
 }
+
+
+
+
+

@@ -10,9 +10,13 @@ export const ScrollToTopButton = () => {
     <button
       onClick={scrollToTop}
       aria-label="Scroll to top"
-      className="w-8 h-8 rounded-lg bg-slate-900 border border-slate-800 hover:border-cyan-500/40 text-slate-400 hover:text-cyan-400 flex items-center justify-center transition-all duration-200"
+      className="w-8 h-8 rounded-md bg-bg-surface border border-border-subtle hover:border-accent-text text-text-muted hover:text-accent-text flex items-center justify-center transition-all duration-200 cursor-pointer"
     >
       <ArrowUp className="w-3.5 h-3.5" />
     </button>
   );
 };
+
+
+
+

@@ -25,3 +25,7 @@ export const ScrollReveal = ({ children, direction = "up" }) => {
     </motion.div>
   );
 };
+
+
+
+

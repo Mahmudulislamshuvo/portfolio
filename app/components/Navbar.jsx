@@ -5,6 +5,8 @@ import { ResumeModal } from "./ResumeModal";
 import Image from "next/image";
 import logo from "../../public/logo.png";
 
+import { ThemeToggle } from "./ThemeToggle";
+
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -70,21 +72,21 @@ export const Navbar = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-[#080B11]/85 backdrop-blur-md border-b border-slate-800/80 py-3.5 shadow-2xl shadow-black/50"
-          : "bg-linear-to-b from-black/80 via-black/40 to-transparent py-5"
+          ? "bg-bg-main/85 backdrop-blur-md border-b border-border-subtle py-3.5"
+          : "bg-gradient-to-b from-black/80 via-black/40 to-transparent py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
         <a
           href="#home"
-          className="flex items-center text-center gap-x-1 text-white font-bold text-lg group"
+          className="flex items-center text-center gap-x-1 font-bold text-lg group"
         >
           <span>
             <Image src={logo} alt="Logo" height={40} width={40} />
           </span>
-          <span className="tracking-tight text-slate-100 font-semibold flex items-center gap-1.5 drop-shadow-md">
-            Mahmudul <span className="text-cyan-400">Islam</span>
+          <span className={`tracking-tight font-semibold flex items-center gap-1.5 ${scrolled ? "text-text-primary" : "text-white"}`}>
+            Mahmudul <span className="text-accent-text">Islam</span>
           </span>
         </a>
 
@@ -94,12 +96,12 @@ export const Navbar = () => {
             <a
               key={item.label}
               href={item.href}
-              className={`transition-colors duration-200 hover:text-cyan-400 drop-shadow-md ${
+              className={`transition-colors duration-200 hover:text-accent-text ${
                 activeSection === item.href.substring(1)
-                  ? "text-cyan-400 font-semibold"
+                  ? "text-accent-text font-semibold"
                   : scrolled
-                    ? "text-slate-400"
-                    : "text-white font-medium"
+                    ? "text-text-muted hover:text-text-primary"
+                    : "text-white font-medium hover:text-accent-text"
               }`}
             >
               {item.label}
@@ -109,9 +111,10 @@ export const Navbar = () => {
 
         {/* Action Buttons */}
         <div className="hidden sm:flex items-center gap-3">
+          <ThemeToggle />
           <button
             onClick={() => setResumeModalOpen(true)}
-            className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-indigo-600 via-indigo-500 to-blue-600 hover:from-indigo-500 hover:to-blue-500 rounded-full shadow-lg shadow-indigo-600/30 hover:shadow-indigo-600/50 transition-all duration-200 active:scale-95 border border-indigo-400/30 cursor-pointer"
+            className="flex items-center gap-2 px-4 py-2 text-xs font-semibold text-accent-foreground bg-accent hover:bg-accent-hover rounded-md shadow-sm transition-all duration-200 active:scale-95 border border-accent cursor-pointer"
           >
             <span>Resume</span>
             <Download className="w-3.5 h-3.5" />
@@ -120,12 +123,13 @@ export const Navbar = () => {
 
         {/* Mobile menu hamburger */}
         <div className="flex sm:hidden items-center gap-2">
+          <ThemeToggle />
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`p-2 rounded-lg transition-colors ${
               scrolled
-                ? "text-slate-400 hover:text-white hover:bg-slate-800/60"
-                : "text-white hover:text-slate-200 hover:bg-white/20"
+                ? "text-text-muted hover:text-text-primary hover:bg-bg-card-hover"
+                : "text-text-primary hover:text-accent-text hover:bg-bg-card-hover"
             }`}
             aria-label="Toggle menu"
           >
@@ -140,13 +144,13 @@ export const Navbar = () => {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="sm:hidden bg-[#0B0F17]/95 border-b border-slate-800 backdrop-blur-xl px-6 py-5 space-y-3">
+        <div className="sm:hidden bg-bg-main/95 border-b border-border-subtle backdrop-blur-xl px-6 py-5 space-y-3">
           {navItems.map((item) => (
             <a
               key={item.label}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block py-2 text-slate-300 hover:text-cyan-400 font-medium text-sm border-b border-slate-800/40"
+              className="block py-2 text-text-secondary hover:text-accent-text font-medium text-sm border-b border-border-subtle/40"
             >
               {item.label}
             </a>
@@ -157,7 +161,7 @@ export const Navbar = () => {
                 setMobileMenuOpen(false);
                 setResumeModalOpen(true);
               }}
-              className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 rounded-full"
+              className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-semibold text-accent-foreground bg-accent hover:bg-accent-hover rounded-md"
             >
               <span>Download Resume</span>
               <Download className="w-3.5 h-3.5" />
@@ -173,3 +177,7 @@ export const Navbar = () => {
     </header>
   );
 };
+
+
+
+

@@ -6,9 +6,9 @@ export const Reviews = ({ reviews }) => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Heading */}
         <div className="text-center mb-14">
-          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white inline-block">
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary inline-block">
             Client{' '}
-            <span className="text-cyan-400">
+            <span className="text-accent-text">
               Reviews
             </span>
           </h2>
@@ -19,7 +19,7 @@ export const Reviews = ({ reviews }) => {
           {reviews.map((rev) => (
             <div
               key={rev.id}
-              className="bg-[#111722] border border-slate-800/80 hover:border-slate-700 rounded-2xl p-6 transition-all duration-300 hover:shadow-md hover:-translate-y-1 group flex flex-col justify-between"
+              className="bg-bg-card border border-border-subtle hover:border-border-strong rounded-lg p-6 transition-all duration-300 hover:shadow-sm group flex flex-col justify-between"
             >
               <div>
                 {/* Reviewer Header */}
@@ -27,13 +27,13 @@ export const Reviews = ({ reviews }) => {
                   <img
                     src={rev.avatar}
                     alt={rev.name}
-                    className="w-11 h-11 rounded-full object-cover border-2 border-indigo-500/30 group-hover:border-cyan-400 transition-colors"
+                    className="w-11 h-11 rounded-full object-cover border border-border-subtle group-hover:border-accent-text transition-colors"
                   />
                   <div>
-                    <h3 className="text-sm sm:text-base font-bold text-white leading-tight">
+                    <h3 className="text-sm sm:text-base font-bold text-text-primary leading-tight">
                       {rev.name}
                     </h3>
-                    <p className="text-xs text-slate-400 mt-0.5">
+                    <p className="text-xs text-text-muted mt-0.5">
                       {rev.role}, {rev.company}
                     </p>
                   </div>
@@ -49,8 +49,8 @@ export const Reviews = ({ reviews }) => {
                         key={i}
                         className={`w-4 h-4 ${
                           isFull || isHalf
-                            ? 'text-cyan-400 fill-cyan-400'
-                            : 'text-slate-700'
+                            ? 'text-accent-text fill-accent-text'
+                            : 'text-border-strong'
                         }`}
                       />
                     );
@@ -58,15 +58,15 @@ export const Reviews = ({ reviews }) => {
                 </div>
 
                 {/* Comment */}
-                <p className="text-slate-300 text-xs sm:text-sm leading-relaxed italic">
+                <p className="text-text-secondary text-xs sm:text-sm leading-relaxed italic">
                   "{rev.comment}"
                 </p>
               </div>
 
               {rev.category && (
-                <div className="mt-5 pt-3 border-t border-slate-800/50 flex items-center justify-between text-[11px] font-mono text-slate-400">
+                <div className="mt-5 pt-3 border-t border-border-subtle flex items-center justify-between text-[11px] font-mono text-text-muted">
                   <span>Project: {rev.category}</span>
-                  <span className="text-indigo-400 font-sans font-semibold">Verified</span>
+                  <span className="text-accent-text font-mono font-medium">Verified</span>
                 </div>
               )}
             </div>
@@ -77,3 +77,7 @@ export const Reviews = ({ reviews }) => {
     </section>
   );
 };
+
+
+
+

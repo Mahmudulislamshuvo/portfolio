@@ -146,10 +146,10 @@ export const Contact = () => {
           {/* Left Column: Contact info */}
           <div className="lg:col-span-5 space-y-8">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-                Get In <span className="text-cyan-400">Touch</span>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-text-primary">
+                Get In <span className="text-accent-text">Touch</span>
               </h2>
-              <p className="text-slate-400 text-sm sm:text-base mt-4 leading-relaxed">
+              <p className="text-text-muted text-sm sm:text-base mt-4 leading-relaxed">
                 Have a project in mind or just want to chat? Feel free to reach
                 out or book a direct meeting with me. I'm always open to new
                 opportunities.
@@ -159,16 +159,16 @@ export const Contact = () => {
             <div className="space-y-5">
               {/* Email */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400 shrink-0">
+                <div className="w-10 h-10 rounded-md bg-bg-surface border border-border-subtle flex items-center justify-center text-accent-text shrink-0">
                   <Mail className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-semibold">
+                  <div className="text-[11px] font-mono text-text-muted uppercase tracking-wider font-semibold">
                     EMAIL ME
                   </div>
                   <a
                     href="mailto:mahmudulislammern@gmail.com"
-                    className="text-white text-sm font-medium hover:text-cyan-400 transition-colors"
+                    className="text-text-primary text-sm font-medium hover:text-accent-text transition-colors"
                   >
                     mahmudulislammern@gmail.com
                   </a>
@@ -177,14 +177,14 @@ export const Contact = () => {
 
               {/* Location */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400 shrink-0">
+                <div className="w-10 h-10 rounded-md bg-bg-surface border border-border-subtle flex items-center justify-center text-accent-text shrink-0">
                   <MapPin className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-semibold">
+                  <div className="text-[11px] font-mono text-text-muted uppercase tracking-wider font-semibold">
                     BASED IN
                   </div>
-                  <div className="text-white text-sm font-medium">
+                  <div className="text-text-primary text-sm font-medium">
                     Gazipur, Bangladesh
                   </div>
                 </div>
@@ -192,17 +192,17 @@ export const Contact = () => {
 
               {/* Schedule */}
               <div className="flex items-start gap-4">
-                <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center text-cyan-400 shrink-0">
+                <div className="w-10 h-10 rounded-md bg-bg-surface border border-border-subtle flex items-center justify-center text-accent-text shrink-0">
                   <Clock className="w-4 h-4" />
                 </div>
                 <div>
-                  <div className="text-[11px] font-mono text-slate-500 uppercase tracking-wider font-semibold">
+                  <div className="text-[11px] font-mono text-text-muted uppercase tracking-wider font-semibold">
                     AVAILABILITY
                   </div>
-                  <div className="text-white text-sm font-medium">
+                  <div className="text-text-primary text-sm font-medium">
                     10:00 AM - 3:00 AM (GMT+6)
                   </div>
-                  <div className="text-slate-400 text-xs">
+                  <div className="text-text-muted text-xs">
                     Saturday - Thursday (Friday Off)
                   </div>
                 </div>
@@ -239,7 +239,7 @@ export const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={soc.label}
-                  className="w-10 h-10 rounded-xl bg-[#111722] border border-slate-800 hover:border-slate-600 text-slate-400 hover:text-white flex items-center justify-center transition-all duration-200 hover:shadow-md cursor-pointer"
+                  className="w-9 h-9 rounded-md bg-bg-card border border-border-subtle hover:border-accent-text text-text-muted hover:text-accent-text flex items-center justify-center transition-all duration-200 cursor-pointer"
                 >
                   <soc.icon className="w-4 h-4" />
                 </a>
@@ -249,19 +249,19 @@ export const Contact = () => {
 
           {/* Right Column: Contact Form / Booking */}
           <div className="lg:col-span-7 relative overflow-hidden">
-            <div className="bg-[#141A26] border border-slate-800 rounded-2xl p-6 sm:p-8 shadow-lg min-h-[500px] flex flex-col">
+            <div className="bg-bg-card border border-border-subtle rounded-lg p-6 sm:p-8 shadow-sm min-h-[500px] flex flex-col">
               {/* Tabs */}
-              <div className="flex items-center gap-2 mb-8 bg-slate-900/50 p-1.5 rounded-xl border border-slate-800/50">
+              <div className="flex items-center gap-1.5 mb-8 bg-bg-surface p-1 rounded-md border border-border-subtle">
                 <button
                   onClick={() => {
                     setActiveTab("meeting");
                     setStatusMsg("");
                     setBookingStep(1);
                   }}
-                  className={`flex-1 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center justify-center gap-2 ${
+                  className={`flex-1 py-2 text-xs sm:text-sm font-mono font-medium rounded-md transition-all flex items-center justify-center gap-2 cursor-pointer ${
                     activeTab === "meeting"
-                      ? "bg-slate-800 text-white shadow-sm border border-slate-700/50"
-                      : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
+                      ? "bg-accent text-accent-foreground shadow-sm"
+                      : "text-text-muted hover:text-text-primary hover:bg-bg-card-hover"
                   }`}
                 >
                   <Calendar className="w-4 h-4" />
@@ -272,10 +272,10 @@ export const Contact = () => {
                     setActiveTab("message");
                     setStatusMsg("");
                   }}
-                  className={`flex-1 py-2.5 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center justify-center gap-2 ${
+                  className={`flex-1 py-2 text-xs sm:text-sm font-mono font-medium rounded-md transition-all flex items-center justify-center gap-2 cursor-pointer ${
                     activeTab === "message"
-                      ? "bg-slate-800 text-white shadow-sm border border-slate-700/50"
-                      : "text-slate-400 hover:text-slate-200 hover:bg-slate-800/50"
+                      ? "bg-accent text-accent-foreground shadow-sm"
+                      : "text-text-muted hover:text-text-primary hover:bg-bg-card-hover"
                   }`}
                 >
                   <Send className="w-4 h-4" />
@@ -285,14 +285,14 @@ export const Contact = () => {
 
               {statusMsg && (
                 <div
-                  className={`p-3.5 rounded-xl text-xs font-medium flex items-center gap-2 mb-6 ${
+                  className={`p-3.5 rounded-md text-xs font-medium flex items-center gap-2 mb-6 ${
                     sent
-                      ? "bg-emerald-950/60 border border-emerald-800/80 text-emerald-300"
-                      : "bg-red-950/60 border border-red-800/80 text-red-300"
+                      ? "bg-accent/15 border border-accent/30 text-accent-text"
+                      : "bg-red-500/10 border border-red-500/30 text-red-500"
                   }`}
                 >
                   {sent && (
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-accent-text shrink-0" />
                   )}
                   <span>{statusMsg}</span>
                 </div>
@@ -312,7 +312,7 @@ export const Contact = () => {
                   >
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold text-slate-300 mb-2">
+                        <label className="block text-xs font-semibold text-text-secondary mb-2">
                           Your Name
                         </label>
                         <input
@@ -322,11 +322,11 @@ export const Contact = () => {
                           onChange={handleChange}
                           placeholder="John Doe"
                           required
-                          className="w-full bg-[#0B0F19] border border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
+                          className="w-full bg-bg-main border border-border-subtle rounded-md px-4 py-3 text-xs sm:text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-slate-300 mb-2">
+                        <label className="block text-xs font-semibold text-text-secondary mb-2">
                           Your Email
                         </label>
                         <input
@@ -336,12 +336,12 @@ export const Contact = () => {
                           onChange={handleChange}
                           placeholder="john@example.com"
                           required
-                          className="w-full bg-[#0B0F19] border border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
+                          className="w-full bg-bg-main border border-border-subtle rounded-md px-4 py-3 text-xs sm:text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                         />
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-2">
+                      <label className="block text-xs font-semibold text-text-secondary mb-2">
                         Subject
                       </label>
                       <input
@@ -350,11 +350,11 @@ export const Contact = () => {
                         value={formState.subject}
                         onChange={handleChange}
                         placeholder="Project Inquiry"
-                        className="w-full bg-[#0B0F19] border border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
+                        className="w-full bg-bg-main border border-border-subtle rounded-md px-4 py-3 text-xs sm:text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-2">
+                      <label className="block text-xs font-semibold text-text-secondary mb-2">
                         Message
                       </label>
                       <textarea
@@ -364,16 +364,16 @@ export const Contact = () => {
                         onChange={handleChange}
                         placeholder="How can I help you?"
                         required
-                        className="w-full bg-[#0B0F19] border border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
+                        className="w-full bg-bg-main border border-border-subtle rounded-md px-4 py-3 text-xs sm:text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors resize-none"
                       />
                     </div>
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className={`w-full py-3.5 rounded-xl text-xs sm:text-sm font-bold text-white transition-all duration-200 flex items-center justify-center gap-2 active:scale-[0.99] cursor-pointer ${
+                      className={`w-full py-3.5 rounded-md text-xs sm:text-sm font-mono font-medium transition-colors flex items-center justify-center gap-2 active:scale-[0.99] cursor-pointer ${
                         isSubmitting
-                          ? "bg-slate-800 text-slate-500 cursor-not-allowed"
-                          : "bg-gradient-to-r from-indigo-600 via-indigo-500 to-blue-600 hover:from-indigo-500 hover:to-blue-500 shadow-xl shadow-indigo-600/30 hover:shadow-indigo-600/50"
+                          ? "bg-bg-surface text-text-muted cursor-not-allowed border border-border-subtle"
+                          : "bg-accent hover:bg-accent-hover text-accent-foreground shadow-sm"
                       }`}
                     >
                       {isSubmitting ? (
@@ -399,10 +399,10 @@ export const Contact = () => {
                     className="flex-1 flex flex-col"
                   >
                     <div className="mb-4">
-                      <h3 className="text-white font-semibold text-sm mb-1">
+                      <h3 className="text-text-primary font-semibold text-sm mb-1">
                         Select a Date
                       </h3>
-                      <p className="text-slate-400 text-xs">
+                      <p className="text-text-muted text-xs">
                         Choose an available day for our meeting.
                       </p>
                     </div>
@@ -419,24 +419,24 @@ export const Contact = () => {
                             key={i}
                             type="button"
                             onClick={() => handleDateSelect(dateObj)}
-                            className={`snap-start shrink-0 w-16 h-20 rounded-xl border flex flex-col items-center justify-center transition-all ${
+                            className={`snap-start shrink-0 w-16 h-20 rounded-md border flex flex-col items-center justify-center transition-all cursor-pointer ${
                               isSelected
-                                ? "bg-cyan-500/20 border-cyan-500 shadow-[0_0_15px_rgba(34,211,238,0.2)]"
-                                : "bg-[#0B0F19] border-slate-800 hover:border-slate-600 hover:bg-slate-800/50"
+                                ? "bg-accent/15 border-accent text-accent-text"
+                                : "bg-bg-main border-border-subtle hover:border-border-strong hover:bg-bg-card-hover"
                             }`}
                           >
                             <span
-                              className={`text-[10px] font-bold uppercase tracking-wider ${isSelected ? "text-cyan-400" : "text-slate-400"}`}
+                              className={`text-[10px] font-mono font-bold uppercase tracking-wider ${isSelected ? "text-accent-text" : "text-text-muted"}`}
                             >
                               {format(dateObj, "MMM")}
                             </span>
                             <span
-                              className={`text-xl font-bold mt-0.5 ${isSelected ? "text-white" : "text-slate-200"}`}
+                              className={`text-xl font-mono font-bold mt-0.5 ${isSelected ? "text-accent-text" : "text-text-primary"}`}
                             >
                               {format(dateObj, "d")}
                             </span>
                             <span
-                              className={`text-[10px] font-medium mt-0.5 ${isSelected ? "text-cyan-300" : "text-slate-500"}`}
+                              className={`text-[10px] font-mono font-medium mt-0.5 ${isSelected ? "text-accent-text" : "text-text-muted"}`}
                             >
                               {format(dateObj, "EEE")}
                             </span>
@@ -450,24 +450,24 @@ export const Contact = () => {
                       {bookingDate && (
                         <>
                           <div className="flex justify-between items-center mb-3">
-                            <h3 className="text-white font-semibold text-sm">
+                            <h3 className="text-text-primary font-semibold text-sm">
                               Available Time (GMT+6)
                             </h3>
                             {loadingSlots && (
-                              <Loader2 className="w-4 h-4 animate-spin text-cyan-400" />
+                              <Loader2 className="w-4 h-4 animate-spin text-accent-text" />
                             )}
                           </div>
 
                           {dateError && (
-                            <p className="text-red-400 text-xs">{dateError}</p>
+                            <p className="text-red-500 text-xs">{dateError}</p>
                           )}
 
                           {!loadingSlots &&
                             availableSlots.length === 0 &&
                             !dateError && (
-                              <div className="bg-[#0B0F19] border border-slate-800 rounded-xl p-6 text-center">
-                                <Calendar className="w-8 h-8 text-slate-600 mx-auto mb-2 opacity-50" />
-                                <p className="text-slate-400 text-xs">
+                              <div className="bg-bg-main border border-border-subtle rounded-md p-6 text-center">
+                                <Calendar className="w-8 h-8 text-text-muted mx-auto mb-2 opacity-50" />
+                                <p className="text-text-muted text-xs">
                                   No slots available for this date.
                                 </p>
                               </div>
@@ -489,10 +489,10 @@ export const Contact = () => {
                                     key={slot}
                                     type="button"
                                     onClick={() => setSelectedSlot(slot)}
-                                    className={`py-2.5 px-2 text-xs font-semibold rounded-lg transition-all border ${
+                                    className={`py-2 px-2 text-xs font-mono font-medium rounded-md transition-all border cursor-pointer ${
                                       isSelected
-                                        ? "bg-cyan-500 text-[#080B11] border-cyan-400 shadow-[0_0_10px_rgba(34,211,238,0.3)] scale-[1.02]"
-                                        : "bg-[#0B0F19] border-slate-800 text-slate-300 hover:border-cyan-500/50 hover:bg-slate-800/80"
+                                        ? "bg-accent text-accent-foreground border-accent shadow-sm"
+                                        : "bg-bg-main border-border-subtle text-text-secondary hover:border-accent hover:text-text-primary"
                                     }`}
                                   >
                                     {timeString}
@@ -505,9 +505,9 @@ export const Contact = () => {
                       )}
 
                       {!bookingDate && (
-                        <div className="bg-[#0B0F19]/50 border border-slate-800/50 border-dashed rounded-xl p-8 flex flex-col items-center justify-center text-center mt-2">
-                          <Calendar className="w-8 h-8 text-slate-600 mb-3 opacity-50" />
-                          <p className="text-slate-500 text-xs">
+                        <div className="bg-bg-main border border-border-subtle border-dashed rounded-md p-8 flex flex-col items-center justify-center text-center mt-2">
+                          <Calendar className="w-8 h-8 text-text-muted mb-3 opacity-50" />
+                          <p className="text-text-muted text-xs">
                             Select a date from above to view available time
                             slots.
                           </p>
@@ -521,10 +521,10 @@ export const Contact = () => {
                         type="button"
                         disabled={!selectedSlot}
                         onClick={() => setBookingStep(2)}
-                        className={`w-full py-3.5 rounded-xl text-sm font-bold transition-all duration-300 flex items-center justify-center gap-2 ${
+                        className={`w-full py-3.5 rounded-md text-xs sm:text-sm font-mono font-medium transition-colors flex items-center justify-center gap-2 ${
                           !selectedSlot
-                            ? "bg-slate-800/50 text-slate-600 cursor-not-allowed border border-slate-800"
-                            : "bg-white text-[#080B11] hover:bg-slate-200 shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] cursor-pointer"
+                            ? "bg-bg-surface text-text-muted cursor-not-allowed border border-border-subtle"
+                            : "bg-accent text-accent-foreground hover:bg-accent-hover cursor-pointer shadow-sm"
                         }`}
                       >
                         <span>Next Step</span>
@@ -546,13 +546,13 @@ export const Contact = () => {
                     className="flex-1 flex flex-col space-y-5"
                   >
                     {/* Summary Card */}
-                    <div className="bg-gradient-to-r from-[#0B0F19] to-slate-900 border border-slate-800 rounded-xl p-4 flex items-center justify-between shadow-inner">
+                    <div className="bg-bg-surface border border-border-subtle rounded-md p-4 flex items-center justify-between">
                       <div>
-                        <p className="text-[10px] text-slate-500 font-bold uppercase tracking-wider mb-1">
+                        <p className="text-[10px] text-text-muted font-bold uppercase tracking-wider mb-1 font-mono">
                           Selected Time
                         </p>
-                        <p className="text-sm font-semibold text-white flex items-center gap-2">
-                          <Calendar className="w-3.5 h-3.5 text-cyan-400" />
+                        <p className="text-sm font-semibold text-text-primary flex items-center gap-2">
+                          <Calendar className="w-3.5 h-3.5 text-accent-text" />
                           {bookingDate
                             ? format(bookingDate, "MMM d, yyyy")
                             : ""}{" "}
@@ -572,7 +572,7 @@ export const Contact = () => {
                       <button
                         type="button"
                         onClick={() => setBookingStep(1)}
-                        className="w-8 h-8 rounded-full bg-slate-800 text-slate-400 hover:text-white hover:bg-slate-700 flex items-center justify-center transition-colors"
+                        className="w-8 h-8 rounded-md bg-bg-card border border-border-subtle text-text-muted hover:text-text-primary flex items-center justify-center transition-colors cursor-pointer"
                         title="Change Date/Time"
                       >
                         <ArrowLeft className="w-4 h-4" />
@@ -581,7 +581,7 @@ export const Contact = () => {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-semibold text-slate-300 mb-2">
+                        <label className="block text-xs font-semibold text-text-secondary mb-2">
                           Your Name
                         </label>
                         <input
@@ -591,11 +591,11 @@ export const Contact = () => {
                           onChange={handleChange}
                           placeholder="John Doe"
                           required
-                          className="w-full bg-[#0B0F19] border border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
+                          className="w-full bg-bg-main border border-border-subtle rounded-md px-4 py-3 text-xs sm:text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                         />
                       </div>
                       <div>
-                        <label className="block text-xs font-semibold text-slate-300 mb-2">
+                        <label className="block text-xs font-semibold text-text-secondary mb-2">
                           Your Email
                         </label>
                         <input
@@ -605,13 +605,13 @@ export const Contact = () => {
                           onChange={handleChange}
                           placeholder="john@example.com"
                           required
-                          className="w-full bg-[#0B0F19] border border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors"
+                          className="w-full bg-bg-main border border-border-subtle rounded-md px-4 py-3 text-xs sm:text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold text-slate-300 mb-2">
+                      <label className="block text-xs font-semibold text-text-secondary mb-2">
                         Meeting Topic
                       </label>
                       <textarea
@@ -621,7 +621,7 @@ export const Contact = () => {
                         onChange={handleChange}
                         placeholder="What would you like to discuss?"
                         required
-                        className="w-full bg-[#0B0F19] border border-slate-800 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-slate-600 focus:outline-none focus:border-cyan-500 transition-colors resize-none"
+                        className="w-full bg-bg-main border border-border-subtle rounded-md px-4 py-3 text-xs sm:text-sm text-text-primary placeholder:text-text-muted focus:outline-none focus:border-accent transition-colors resize-none"
                       />
                     </div>
 
@@ -629,10 +629,10 @@ export const Contact = () => {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className={`w-full py-3.5 rounded-xl text-sm font-bold text-[#080B11] transition-all duration-300 flex items-center justify-center gap-2 active:scale-[0.99] cursor-pointer ${
+                        className={`w-full py-3.5 rounded-md text-xs sm:text-sm font-mono font-medium text-accent-foreground transition-colors flex items-center justify-center gap-2 active:scale-[0.99] cursor-pointer ${
                           isSubmitting
-                            ? "bg-cyan-600/50 text-cyan-200 cursor-not-allowed"
-                            : "bg-cyan-400 hover:bg-cyan-300 shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:shadow-[0_0_25px_rgba(34,211,238,0.4)]"
+                            ? "bg-bg-surface text-text-muted cursor-not-allowed border border-border-subtle"
+                            : "bg-accent hover:bg-accent-hover shadow-sm"
                         }`}
                       >
                         {isSubmitting ? (
@@ -658,17 +658,17 @@ export const Contact = () => {
                     exit="exit"
                     className="flex-1 flex flex-col items-center justify-center text-center py-10"
                   >
-                    <div className="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center mb-6">
-                      <CheckCircle2 className="w-10 h-10 text-emerald-400" />
+                    <div className="w-16 h-16 bg-accent/15 border border-accent/30 rounded-full flex items-center justify-center mb-6">
+                      <CheckCircle2 className="w-8 h-8 text-accent-text" />
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">
+                    <h3 className="text-2xl font-bold text-text-primary mb-2">
                       Booking Confirmed!
                     </h3>
-                    <p className="text-slate-400 text-sm mb-6 max-w-[250px]">
+                    <p className="text-text-muted text-sm mb-6 max-w-[250px]">
                       Your meeting request has been scheduled successfully. You
                       will receive an email confirmation shortly.
                     </p>
-                    <p className="text-slate-500 text-xs">
+                    <p className="text-text-muted text-xs font-mono">
                       Redirecting back in a few seconds...
                     </p>
                   </motion.div>
@@ -681,3 +681,7 @@ export const Contact = () => {
     </section>
   );
 };
+
+
+
+
