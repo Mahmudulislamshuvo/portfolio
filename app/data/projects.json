@@ -49,30 +49,5 @@
         "/projects/devton/s3.png"
       ]
     }
-  },
-  {
-    "id": "fintech-alpha",
-    "title": "FinTech Alpha",
-    "description": "Modern Banking Dashboard",
-    "category": "Full-Stack",
-    "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
-    "techStack": ["React", "Node.js", "MongoDB"],
-    "links": {
-      "github": "https://github.com/example/fintech"
-    },
-    "details": {
-      "role": "Full-Stack Developer",
-      "challenge": "Needed a secure, real-time dashboard for high-net-worth clients.",
-      "solution": "Built a scalable microservices architecture with WebSockets for live data.",
-      "features": [
-        "Real-time Analytics",
-        "Secure Authentication",
-        "Custom Reporting"
-      ],
-      "outcomes": [
-        { "label": "USER ENGAGEMENT", "value": "+60%" },
-        { "label": "API RESPONSE", "value": "< 100ms" }
-      ]
-    }
   }
 ]
