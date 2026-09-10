@@ -1,45 +1,52 @@
 [
   {
-    "id": "ecomart",
-    "title": "EcoMart",
-    "description": "Sustainable Shopping Experience",
+    "id": "Devton",
+    "title": "Devton",
+    "description": "An AI-powered immersive story-reading platform",
     "category": "React/Next.js",
-    "thumbnail": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80",
-    "techStack": ["Next.js", "Tailwind CSS", "Stripe", "Prisma"],
+    "thumbnail": "/public/devtonSS.png",
+    "techStack": [
+      "Next.js",
+      "Tailwind CSS",
+      "Gemini AI",
+      "MongoDB",
+      "NextAuth.js",
+      "Framer Motion"
+    ],
     "links": {
-      "live": "https://example.com",
-      "githubClient": "https://github.com/example/client",
-      "githubServer": "https://github.com/example/server"
+      "live": "https://devtoon.vercel.app/",
+      "githubClient": "https://github.com/Mahmudulislamshuvo/devtoon",
+      "githubServer": ""
     },
     "details": {
-      "role": "Lead Frontend Developer",
-      "client": "EcoMart Global Inc.",
-      "timeline": "4 Months (2023)",
-      "challenge": "The client needed a platform that could handle high traffic while maintaining a buttery-smooth 60fps interaction experience. The cart state needed to be consistent across multiple tabs and devices.",
-      "solution": "We implemented an advanced asset-loading strategy using Next.js 13 streaming and Suspense. We also utilized a robust global state management setup integrated with local storage for cross-tab synchronization.",
+      "role": "Full Stack Developer",
+      "client": "Personal Portfolio Project",
+      "timeline": "2026",
+      "challenge": "Integrating the Gemini API to consistently return structured JSON data proved highly difficult. Despite following the official JavaScript documentation using Zod validation, the AI responses were unstable and formatted unpredictably across different requests.",
+      "solution": "After consulting the 'Learn With Sumit (React Accelerator)' community, I pivoted from the JS SDK's Zod integration to utilizing the REST API schema structure. By carefully defining the schema constraints in this format, Gemini finally provided 100% accurate and consistently structured JSON responses.",
       "features": [
         {
-          "title": "Dynamic Filtering",
-          "description": "Fast and responsive product filtering without page reloads."
+          "title": "AI Story Generation",
+          "description": "Seamless integration with Gemini AI to generate dynamic and properly structured story content."
         },
         {
-          "title": "One-Click Checkout",
-          "description": "Streamlined checkout process integrated seamlessly with Stripe."
+          "title": "Interactive Story Stream",
+          "description": "Implemented infinite scrolling for a buttery-smooth and uninterrupted story reading experience."
         },
         {
-          "title": "Adaptive Layout",
-          "description": "Fully responsive design that adapts to mobile, tablet, and desktop views."
+          "title": "Secure Authentication",
+          "description": "Robust user login and registration system built with NextAuth.js and MongoDB."
         }
       ],
       "outcomes": [
-        { "label": "LIGHTHOUSE SCORE", "value": "98/100" },
-        { "label": "CONVERSION RATE", "value": "+40%" },
-        { "label": "TIME TO INTERACTIVE", "value": "2.1s" }
+        { "label": "AI OUTPUT ACCURACY", "value": "100%" },
+        { "label": "USER EXPERIENCE", "value": "Infinite Scroll" },
+        { "label": "PERFORMANCE", "value": "Fast SSR" }
       ],
       "screenshots": [
-        "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&q=80"
+        "/projects/devton/s1.png",
+        "/projects/devton/s2.png",
+        "/projects/devton/s3.png"
       ]
     }
   },
@@ -57,7 +64,11 @@
       "role": "Full-Stack Developer",
       "challenge": "Needed a secure, real-time dashboard for high-net-worth clients.",
       "solution": "Built a scalable microservices architecture with WebSockets for live data.",
-      "features": ["Real-time Analytics", "Secure Authentication", "Custom Reporting"],
+      "features": [
+        "Real-time Analytics",
+        "Secure Authentication",
+        "Custom Reporting"
+      ],
       "outcomes": [
         { "label": "USER ENGAGEMENT", "value": "+60%" },
         { "label": "API RESPONSE", "value": "< 100ms" }
