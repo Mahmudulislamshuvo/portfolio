@@ -4,7 +4,7 @@
     "title": "Devton",
     "description": "An AI-powered immersive story-reading platform",
     "category": "React/Next.js",
-    "thumbnail": "/public/devtonSS.png",
+    "thumbnail": "/projects/devton/s1.png",
     "techStack": [
       "Next.js",
       "Tailwind CSS",
@@ -46,7 +46,8 @@
       "screenshots": [
         "/projects/devton/s1.png",
         "/projects/devton/s2.png",
-        "/projects/devton/s3.png"
+        "/projects/devton/s3.png",
+        "/projects/devton/s4.png"
       ]
     }
   }
